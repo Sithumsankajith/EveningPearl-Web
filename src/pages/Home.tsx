@@ -28,76 +28,72 @@ export default function Home() {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Hero Section */}
-            <section className="bg-white pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
-                <div className="container mx-auto px-4 md:px-6 lg:max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Image Content (Carousel on Left) */}
+            <section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
+                {/* Background Carousel */}
+                <div className="absolute inset-0 z-0">
+                    <AnimatePresence mode="wait">
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="relative h-[400px] lg:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl shadow-navy-100/50 block border border-navy-light/10 order-2 lg:order-1"
+                            key={currentImage}
+                            initial={{ opacity: 0, scale: 1.1 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1.5, ease: "easeOut" }}
+                            className="absolute inset-0"
                         >
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={currentImage}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 1 }}
-                                    className="absolute inset-0"
-                                >
-                                    <div className={`absolute inset-0 ${HERO_IMAGES[currentImage].color} mix-blend-overlay z-10 font-serif`} />
-                                    <PlaceholderImage text={HERO_IMAGES[currentImage].text} className="w-full h-full object-cover" />
-                                </motion.div>
-                            </AnimatePresence>
-
-                            {/* Carousel Indicators */}
-                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                                {HERO_IMAGES.map((_, i) => (
-                                    <button
-                                        key={i}
-                                        onClick={() => setCurrentImage(i)}
-                                        className={`w-2.5 h-2.5 rounded-full transition-all ${currentImage === i ? 'bg-gold w-8' : 'bg-white/50 hover:bg-white'}`}
-                                        aria-label={`Go to slide ${i + 1}`}
-                                    />
-                                ))}
-                            </div>
+                            <div className="absolute inset-0 bg-navy-dark/40 z-10" /> {/* Dark overlay for readability */}
+                            <PlaceholderImage text={HERO_IMAGES[currentImage].text} className="w-full h-full object-cover" />
                         </motion.div>
+                    </AnimatePresence>
+                </div>
 
-                        {/* Text Content (on Right) */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                            className="flex flex-col items-start text-left relative z-10 order-1 lg:order-2"
+                {/* Content Overlay */}
+                <div className="relative z-20 h-full container mx-auto px-4 md:px-6 lg:max-w-7xl flex items-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="max-w-4xl"
+                    >
+                        <span className="inline-block py-1.5 px-4 rounded-full bg-gold/20 text-gold font-bold shadow-sm text-sm tracking-wider uppercase mb-6 border border-gold/30 backdrop-blur-sm">
+                            Welcome to Evening Pearl
+                        </span>
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-6 leading-[1.1] drop-shadow-2xl">
+                            A New Standard of <br />
+                            <span className="text-gold">Luxury Senior Living</span>
+                        </h1>
+                        <div className="w-32 h-1.5 rounded-full mb-8 bg-gold/50 relative overflow-hidden">
+                            <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+                        </div>
+                        <p className="text-lg md:text-xl lg:text-2xl text-white/95 mb-10 max-w-2xl leading-relaxed font-medium drop-shadow-lg">
+                            Experience unparalleled care, comfort, and community in Sri Lanka's most prestigious residences. We ensure absolute peace of mind for you and your family.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center gap-5">
+                            <Link to="/residences" className="w-full sm:w-auto">
+                                <Button variant="accent" size="lg" className="w-full sm:w-auto text-lg font-bold px-10 py-7 h-16 shadow-2xl shadow-gold/20 transition-transform hover:scale-105 active:scale-95">
+                                    Explore Rooms
+                                </Button>
+                            </Link>
+                            <Link to="/contact" className="w-full sm:w-auto">
+                                <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/40 text-white hover:bg-white hover:text-navy-dark text-lg font-bold px-10 py-7 h-16 backdrop-blur-sm transition-all hover:scale-105 active:scale-95">
+                                    Book a Visit
+                                </Button>
+                            </Link>
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Carousel Indicators (Bottom Right) */}
+                <div className="absolute bottom-10 right-10 z-30 flex gap-3">
+                    {HERO_IMAGES.map((_, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setCurrentImage(i)}
+                            className={`group relative h-1.5 transition-all duration-500 rounded-full ${currentImage === i ? 'w-12 bg-gold' : 'w-6 bg-white/30 hover:bg-white/50'}`}
+                            aria-label={`Go to slide ${i + 1}`}
                         >
-                            <span className="inline-block py-1.5 px-4 rounded-full bg-navy/5 text-navy font-bold shadow-sm text-sm tracking-wider uppercase mb-6 border border-navy/10">
-                                Welcome to Evening Pearl
-                            </span>
-                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-navy-dark mb-6 leading-tight">
-                                A New Standard of <br /><span className="text-gold">Luxury Senior Living</span>
-                            </h1>
-                            <div className="w-24 h-1.5 rounded-full mb-8 bg-gold/30 relative overflow-hidden">
-                                <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-                            </div>
-                            <p className="text-lg md:text-xl text-navy-dark/80 mb-10 max-w-xl leading-relaxed font-medium">
-                                Experience unparalleled care, comfort, and community in Sri Lanka's most prestigious residences. We ensure absolute peace of mind for you and your family.
-                            </p>
-                            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                <Link to="/residences" className="w-full sm:w-auto">
-                                    <Button variant="primary" size="lg" className="w-full sm:w-auto text-base font-bold px-8 py-6 h-14 shadow-lg shadow-navy/20">
-                                        Explore Rooms
-                                    </Button>
-                                </Link>
-                                <Link to="/contact" className="w-full sm:w-auto">
-                                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-navy/20 text-navy-dark hover:bg-navy-light hover:text-white text-base font-bold px-8 py-6 h-14">
-                                        Book a Visit
-                                    </Button>
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </div>
+                            <span className="absolute -top-6 left-0 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">0{i + 1}</span>
+                        </button>
+                    ))}
                 </div>
             </section>
 
