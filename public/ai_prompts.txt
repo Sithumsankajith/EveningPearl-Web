@@ -1,0 +1,24 @@
+# AI Image Prompts for Evening Pearl
+
+Use these prompts to generate images when ready to replace the placeholders.
+
+1. Hero Section
+"A high-quality, photorealistic image of a luxury senior residence exterior at golden hour. Warm, inviting lighting. Lush green manicured gardens. A modern but classic architectural design with subtle gold and dark navy blue accents. Serene atmosphere, highly detailed, 8k resolution."
+
+2. Room Details - Single
+"A bright, spacious, and elegantly furnished private bedroom for a senior living facility. A comfortable queen-size bed with premium white linens. Large windows letting in soft natural light. Tasteful, calm decor with subtle navy blue and gold accents. Wheelchair accessible layout, safe and clear pathways. Photorealistic, interior design photography."
+
+3. Room Details - Shared
+"A comfortable shared bedroom in a luxury senior care facility. Two comfortable single beds separated by a stylish privacy divider or curtain. Warm, welcoming atmosphere. Large window, elegant lighting fixtures. Clean, premium look, photorealistic."
+
+4. Room Details - Suite
+"A luxurious senior living suite with a separate seating area. Premium furniture, plush sofa, elegant coffee table, and a large comfortable bed. Decor features dark navy blue and subtle gold touches. Very bright, large windows, elegant sheer curtains. High-end real estate photography."
+
+5. Dining Area
+"An upscale dining room in a luxury senior residence. Elegant tables set with fine dining ware. Comfortable dining chairs with armrests. Warm lighting, tasteful floral centerpieces. Very bright and welcoming, resembling a high-end restaurant. Friendly, well-lit environment. Photorealistic."
+
+6. Wellness / Care
+"A modern, premium physical therapy and wellness center specifically designed for seniors. Clean, bright, state-of-the-art equipment. A serene spa-like environment with wooden textures and soft lighting. Calm and professional atmosphere. Photorealistic."
+
+7. Exterior / Gardens
+"A beautiful, serene garden pathway in a luxury senior care facility. Smooth, accessible walking paths. Lush tropical plants, comfortable seating benches. Seniors walking peacefully. Warm sunny day, Sri Lankan climate feel. High-end, relaxing ambiance."

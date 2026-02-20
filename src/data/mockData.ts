@@ -1,0 +1,126 @@
+import { Room, Service, Testimonial } from './types';
+
+export const rooms: Room[] = [
+    {
+        id: 'm-sing-1',
+        location: 'Mahara',
+        name: 'Classic Single Room',
+        type: 'Single',
+        price: 'LKR 250,000 / month',
+        features: ['Attached Bathroom', 'Garden View', 'Air Conditioning'],
+        amenities: ['24/7 Call Bell', 'Smart TV', 'Wi-Fi', 'Premium Bedding', 'Wardrobe'],
+        included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Basic Medication Management'],
+        availability: 'Available',
+        image: 'Placeholder',
+    },
+    {
+        id: 'm-shar-1',
+        location: 'Mahara',
+        name: 'Comfort Shared Room',
+        type: 'Shared',
+        price: 'LKR 150,000 / month',
+        features: ['Attached Bathroom', 'Privacy Divider', 'Air Conditioning'],
+        amenities: ['24/7 Call Bell', 'Wi-Fi', 'Reading Lamp', 'Personal Storage'],
+        included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Basic Medication Management'],
+        availability: 'Available',
+        image: 'Placeholder',
+    },
+    {
+        id: 'mw-del-1',
+        location: 'Mawaramandiya',
+        name: 'Lakeview Deluxe Room',
+        type: 'Deluxe',
+        price: 'LKR 350,000 / month',
+        features: ['Lake View', 'Spacious Layout', 'Accessible Bathroom'],
+        amenities: ['24/7 Call Bell', 'Smart TV', 'Wi-Fi', 'Premium Bedding', 'Sitting Area'],
+        included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Nursing Support'],
+        availability: 'Waitlist',
+        image: 'Placeholder',
+    },
+    {
+        id: 'mw-sui-1',
+        location: 'Mawaramandiya',
+        name: 'Presidential Suite',
+        type: 'Suite',
+        price: 'Request Pricing',
+        features: ['Separate Living Area', 'Kitchenette', 'Premium Furnishings'],
+        amenities: ['24/7 Call Bell', '2 Smart TVs', 'High-Speed Wi-Fi', 'King Size Bed', 'Lounge Seating'],
+        included: ['Premium Dining', 'Dedicated Caregiver Support', 'Daily Housekeeping', 'Chauffeur Service'],
+        availability: 'Available',
+        image: 'Placeholder',
+    }
+];
+
+export const services: Service[] = [
+    {
+        id: 'srv-1',
+        title: 'Assisted Living',
+        category: 'Care',
+        shortDescription: 'Daily support for a comfortable and independent life.',
+        description: 'Our trained staff provides dignified assistance with daily activities, ensuring residents remain active and engaged while receiving the help they need.',
+        included: ['Bathing & Dressing Assistance', 'Mobility Support', 'Personal Hygiene Care'],
+        iconName: 'HeartHandshake'
+    },
+    {
+        id: 'srv-2',
+        title: 'Nursing & Medication',
+        category: 'Medical',
+        shortDescription: 'Professional health monitoring and medication management.',
+        description: 'Registered nurses on staff provide diligent oversight of health conditions and coordinate with physicians to ensure optimal wellness.',
+        included: ['Medication Administration', 'Vitals Monitoring', 'Physician Coordination', 'Emergency Response'],
+        iconName: 'Stethoscope'
+    },
+    {
+        id: 'srv-3',
+        title: 'Meals & Nutrition',
+        category: 'Dining',
+        shortDescription: 'Chef-prepared meals tailored to dietary needs.',
+        description: 'We offer a high-end dining experience featuring fresh, locally sourced ingredients prepared by executive chefs to meet specific nutritional requirements.',
+        included: ['3 Daily Meals', 'Nutritious Snacks', 'Dietitian Consultations', 'Custom Menu Options'],
+        iconName: 'Utensils'
+    },
+    {
+        id: 'srv-4',
+        title: 'Housekeeping & Laundry',
+        category: 'Lifestyle',
+        shortDescription: 'A clean, fresh, and pristine living environment.',
+        description: 'Our dedicated housekeeping team maintains the highest standards of cleanliness, allowing residents to enjoy a maintenance-free lifestyle.',
+        included: ['Daily Room Cleaning', 'Personal Laundry Service', 'Linen Changes', 'Deep Cleaning'],
+        iconName: 'Sparkles'
+    },
+    {
+        id: 'srv-5',
+        title: 'Recreation & Wellness',
+        category: 'Activities',
+        shortDescription: 'Engaging activities for mental and physical health.',
+        description: 'A vibrant calendar of social, educational, and physical activities designed to promote holistic wellness and community connection.',
+        included: ['Gentle Yoga & Therapy', 'Arts & Crafts', 'Music Evenings', 'Group Excursions'],
+        iconName: 'Flower2'
+    },
+    {
+        id: 'srv-6',
+        title: 'Security & Monitoring',
+        category: 'Safety',
+        shortDescription: '24/7 security and advanced safety protocols.',
+        description: 'State-of-the-art security systems and around-the-clock staff presence ensure a completely safe and secure environment for all residents.',
+        included: ['CCTV Surveillance', 'Secure Perimeters', 'Visitor Management', 'Fire Safety Systems'],
+        iconName: 'ShieldCheck'
+    }
+];
+
+export const testimonials: Testimonial[] = [
+    {
+        id: 't-1',
+        name: 'Amara Weerasinghe',
+        relation: 'Daughter of Resident',
+        text: 'Moving our mother to Evening Pearl was the best decision we ever made. The staff is unbelievably caring, and the facilities in Mahara feel like a luxury hotel. She is happier and healthier than she has been in years.',
+        location: 'Mahara'
+    },
+    {
+        id: 't-2',
+        name: 'Dr. Rohan Perera',
+        relation: 'Resident',
+        text: 'After retiring from a long medical career, I sought a place that understood both comfort and proper healthcare protocols. Mawaramandiya Residence exceeds all my expectations. It is truly a premium living experience with peace of mind.',
+        location: 'Mawaramandiya'
+    }
+];
