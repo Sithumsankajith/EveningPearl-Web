@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 export function Footer() {
     return (
@@ -9,9 +10,7 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
                     <div className="col-span-1">
                         <Link to="/" className="flex items-center gap-2 mb-6">
-                            <div className="w-10 h-10 rounded-full bg-gold-light text-navy-dark flex items-center justify-center font-serif text-xl font-bold">
-                                EP
-                            </div>
+                            <img src={logo} alt="Evening Pearl Logo" className="w-12 h-12 object-contain" />
                             <span className="font-serif text-xl font-semibold tracking-wide text-white">
                                 Evening Pearl
                             </span>

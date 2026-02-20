@@ -4,6 +4,8 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import logo from '@/assets/logo.png';
+
 const NAV_LINKS = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -33,13 +35,11 @@ export function Navbar() {
     }, [location.pathname]);
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
+        <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-navy/95 backdrop-blur-md shadow-md' : 'bg-navy'}`}>
             <div className="container mx-auto px-4 lg:max-w-7xl flex items-center justify-between h-20">
                 <Link to="/" className="flex items-center gap-3 group">
-                    <div className="w-10 h-10 rounded-full bg-navy border border-gold/30 text-gold flex items-center justify-center font-serif text-xl font-bold group-hover:bg-gold group-hover:text-navy-dark transition-colors">
-                        EP
-                    </div>
-                    <span className={`font-serif text-xl font-semibold tracking-wide ${isScrolled ? 'text-navy-dark' : 'text-white'}`}>
+                    <img src={logo} alt="Evening Pearl Logo" className="w-12 h-12 object-contain" />
+                    <span className="font-serif text-xl font-semibold tracking-wide text-white">
                         Evening Pearl
                     </span>
                 </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`text-base font-semibold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gold after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 ${location.pathname === link.path ? 'text-gold after:scale-x-100 after:origin-bottom-left' : isScrolled ? 'text-navy-dark hover:text-navy-light' : 'text-white hover:text-pearlWhite'
+                                className={`text-base font-semibold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gold after:transition-transform hover:after:origin-bottom-left hover:after:scale-x-100 ${location.pathname === link.path ? 'text-gold after:scale-x-100 after:origin-bottom-left' : 'text-white hover:text-gold'
                                     }`}
                             >
                                 {link.name}
@@ -59,13 +59,13 @@ export function Navbar() {
                         ))}
                     </div>
                     <Link to="/contact" className="ml-2">
-                        <Button variant={isScrolled ? 'primary' : 'accent'} size="md" className="font-bold">Book a Visit</Button>
+                        <Button variant="accent" size="md" className="font-bold">Book a Visit</Button>
                     </Link>
                 </nav>
 
                 {/* Mobile Toggle */}
                 <button
-                    className={`lg:hidden p-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${isScrolled ? 'text-navy-dark' : 'text-white'}`}
+                    className="lg:hidden p-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold text-white"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
