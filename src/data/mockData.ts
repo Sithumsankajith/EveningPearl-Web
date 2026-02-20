@@ -1,4 +1,7 @@
 import { Room, Service, Testimonial } from './types';
+import maharaImg from '@/assets/mahara.png';
+import mahara2Img from '@/assets/mahara2.png';
+import mahara3Img from '@/assets/mahara3.png';
 
 export const rooms: Room[] = [
     {
@@ -11,7 +14,7 @@ export const rooms: Room[] = [
         amenities: ['24/7 Call Bell', 'Smart TV', 'Wi-Fi', 'Premium Bedding', 'Wardrobe'],
         included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Basic Medication Management'],
         availability: 'Available',
-        image: 'Placeholder',
+        image: maharaImg,
     },
     {
         id: 'm-shar-1',
@@ -23,7 +26,7 @@ export const rooms: Room[] = [
         amenities: ['24/7 Call Bell', 'Wi-Fi', 'Reading Lamp', 'Personal Storage'],
         included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Basic Medication Management'],
         availability: 'Available',
-        image: 'Placeholder',
+        image: mahara2Img,
     },
     {
         id: 'mw-del-1',
@@ -35,7 +38,7 @@ export const rooms: Room[] = [
         amenities: ['24/7 Call Bell', 'Smart TV', 'Wi-Fi', 'Premium Bedding', 'Sitting Area'],
         included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Nursing Support'],
         availability: 'Waitlist',
-        image: 'Placeholder',
+        image: mahara3Img,
     },
     {
         id: 'mw-sui-1',
@@ -47,7 +50,7 @@ export const rooms: Room[] = [
         amenities: ['24/7 Call Bell', '2 Smart TVs', 'High-Speed Wi-Fi', 'King Size Bed', 'Lounge Seating'],
         included: ['Premium Dining', 'Dedicated Caregiver Support', 'Daily Housekeeping', 'Chauffeur Service'],
         availability: 'Available',
-        image: 'Placeholder',
+        image: maharaImg,
     }
 ];
 
