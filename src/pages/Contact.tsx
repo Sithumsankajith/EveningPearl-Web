@@ -14,8 +14,8 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
                 {/* Contact Form */}
-                <div className="bg-white rounded-[2rem] border border-navy-100 shadow-xl shadow-navy-900/5 p-6 md:p-10">
-                    <h3 className="text-2xl font-serif text-navy-900 mb-8 font-bold">Send us a message</h3>
+                <div className="bg-white rounded-[2rem] border border-navy-light/20 shadow-xl shadow-navy-dark/5 p-6 md:p-10">
+                    <h3 className="text-2xl font-serif text-navy-dark mb-8 font-bold">Send us a message</h3>
                     <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Lead captured! Normally this would send to an API."); }}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <Input label="First Name" placeholder="John" required />
@@ -31,7 +31,7 @@ export default function Contact() {
                             <option value="mawaramandiya">Mawaramandiya Residence</option>
                         </Select>
                         <Textarea label="Message or Questions" placeholder="How can we help you?" required />
-                        <Button size="lg" className="w-full mt-2 h-14 text-base font-bold bg-navy-900 hover:bg-navy-800 text-gold-400 hover:text-gold-300">
+                        <Button size="lg" className="w-full mt-2 h-14 text-base font-bold bg-navy-dark hover:bg-navy text-gold-light hover:text-gold-light/90">
                             Submit Request
                         </Button>
                     </form>
@@ -39,43 +39,43 @@ export default function Contact() {
 
                 {/* Contact Details */}
                 <div className="flex flex-col justify-center space-y-12">
-                    <div className="bg-navy-50 rounded-3xl p-8 border border-navy-100">
-                        <h3 className="text-2xl font-serif text-navy-900 mb-8 font-bold border-b border-navy-200 pb-4">Our Locations</h3>
+                    <div className="bg-pearlWhite rounded-3xl p-8 border border-navy-light/20">
+                        <h3 className="text-2xl font-serif text-navy-dark mb-8 font-bold border-b border-navy-light/50 pb-4">Our Locations</h3>
                         <div className="space-y-10">
                             <div className="flex gap-5">
-                                <div className="w-14 h-14 bg-white shadow-sm border border-navy-100 text-navy-800 rounded-2xl flex items-center justify-center shrink-0">
+                                <div className="w-14 h-14 bg-white shadow-sm border border-navy-light/20 text-navy rounded-2xl flex items-center justify-center shrink-0">
                                     <MapPin className="w-7 h-7" />
                                 </div>
                                 <div>
-                                    <h4 className="text-lg font-bold text-navy-900 mb-1">Mahara Residence</h4>
-                                    <p className="text-slate-600 mb-3 font-medium">123 Kandy Road, Mahara<br />Sri Lanka</p>
-                                    <a href="tel:+94112345678" className="text-navy-700 font-bold hover:text-gold-600 transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-200 text-sm">Call: +94 11 234 5678</a>
+                                    <h4 className="text-lg font-bold text-navy-dark mb-1">Mahara Residence</h4>
+                                    <p className="text-navy-dark/80 mb-3 font-medium">123 Kandy Road, Mahara<br />Sri Lanka</p>
+                                    <a href="tel:+94112345678" className="text-navy font-bold hover:text-gold-soft transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-light/50 text-sm">Call: +94 11 234 5678</a>
                                 </div>
                             </div>
 
                             <div className="flex gap-5">
-                                <div className="w-14 h-14 bg-white shadow-sm border border-navy-100 text-navy-800 rounded-2xl flex items-center justify-center shrink-0">
+                                <div className="w-14 h-14 bg-white shadow-sm border border-navy-light/20 text-navy rounded-2xl flex items-center justify-center shrink-0">
                                     <MapPin className="w-7 h-7" />
                                 </div>
                                 <div>
-                                    <h4 className="text-lg font-bold text-navy-900 mb-1">Mawaramandiya Residence</h4>
-                                    <p className="text-slate-600 mb-3 font-medium">45 Lake Road, Mawaramandiya<br />Sri Lanka</p>
-                                    <a href="tel:+94112345679" className="text-navy-700 font-bold hover:text-gold-600 transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-200 text-sm">Call: +94 11 234 5679</a>
+                                    <h4 className="text-lg font-bold text-navy-dark mb-1">Mawaramandiya Residence</h4>
+                                    <p className="text-navy-dark/80 mb-3 font-medium">45 Lake Road, Mawaramandiya<br />Sri Lanka</p>
+                                    <a href="tel:+94112345679" className="text-navy font-bold hover:text-gold-soft transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-light/50 text-sm">Call: +94 11 234 5679</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="px-4">
-                        <h3 className="text-2xl font-serif text-navy-900 mb-6 font-bold border-b border-navy-100 pb-4">Direct Support</h3>
+                        <h3 className="text-2xl font-serif text-navy-dark mb-6 font-bold border-b border-navy-light/20 pb-4">Direct Support</h3>
                         <div className="space-y-6">
                             <div className="flex items-center gap-4 group">
-                                <div className="w-12 h-12 bg-navy-50 group-hover:bg-navy-900 group-hover:text-white transition-colors text-navy-700 rounded-full flex items-center justify-center shrink-0">
+                                <div className="w-12 h-12 bg-pearlWhite group-hover:bg-navy-dark group-hover:text-white transition-colors text-navy rounded-full flex items-center justify-center shrink-0">
                                     <Mail className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Email Us</p>
-                                    <a href="mailto:support@eveningpearl.lk" className="text-lg font-medium text-navy-900 hover:text-gold-600 transition-colors">support@eveningpearl.lk</a>
+                                    <p className="text-xs font-bold text-navy-dark/70 uppercase tracking-wider mb-1">Email Us</p>
+                                    <a href="mailto:support@eveningpearl.lk" className="text-lg font-medium text-navy-dark hover:text-gold-soft transition-colors">support@eveningpearl.lk</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 group">
@@ -83,8 +83,8 @@ export default function Contact() {
                                     <MessageSquare className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Quickest Response</p>
-                                    <a href="#" className="text-lg font-medium text-navy-900 hover:text-[#25D366] transition-colors flex items-center gap-2">
+                                    <p className="text-xs font-bold text-navy-dark/70 uppercase tracking-wider mb-1">Quickest Response</p>
+                                    <a href="#" className="text-lg font-medium text-navy-dark hover:text-[#25D366] transition-colors flex items-center gap-2">
                                         Chat on WhatsApp
                                     </a>
                                 </div>

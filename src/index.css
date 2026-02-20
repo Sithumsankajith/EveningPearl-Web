@@ -6,10 +6,49 @@
 
 @layer base {
   body {
-    @apply text-slate-800 bg-white antialiased;
+    @apply bg-white antialiased;
+    color: theme('colors.navy.dark');
+    margin: 0;
+    padding: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-navy-900;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.8), transparent);
+  animation: shimmer 2.5s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-shimmer,
+  .after\:transition-transform::after,
+  .hover\:after\:scale-x-100:hover::after,
+  .group-hover\:bg-gold,
+  .transition-all {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -10,11 +10,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     ({ className, type, label, error, ...props }, ref) => {
         return (
             <div className="w-full flex flex-col gap-1.5">
-                {label && <label className="text-sm font-medium text-navy-900">{label}</label>}
+                {label && <label className="text-sm font-medium text-navy-dark">{label}</label>}
                 <input
                     type={type}
                     className={cn(
-                        "flex h-12 w-full rounded-md border border-navy-200 bg-transparent px-3 py-2 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500 text-navy-900 disabled:cursor-not-allowed disabled:opacity-50",
+                        "flex h-12 w-full rounded-md border border-navy/30 bg-white px-3 py-2 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-navy-dark/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:border-gold text-navy-dark disabled:cursor-not-allowed disabled:opacity-50",
                         error && "border-red-500 focus-visible:ring-red-500",
                         className
                     )}
@@ -32,10 +32,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, React.TextareaHTML
     ({ className, label, error, ...props }, ref) => {
         return (
             <div className="w-full flex flex-col gap-1.5">
-                {label && <label className="text-sm font-medium text-navy-900">{label}</label>}
+                {label && <label className="text-sm font-medium text-navy-dark">{label}</label>}
                 <textarea
                     className={cn(
-                        "flex min-h-[120px] w-full rounded-md border border-navy-200 bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-slate-400 text-navy-900 resize-y focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500 disabled:cursor-not-allowed disabled:opacity-50",
+                        "flex min-h-[120px] w-full rounded-md border border-navy/30 bg-white px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-navy-dark/50 text-navy-dark resize-y focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:border-gold disabled:cursor-not-allowed disabled:opacity-50",
                         error && "border-red-500 focus-visible:ring-red-500",
                         className
                     )}
@@ -53,10 +53,10 @@ export const Select = React.forwardRef<HTMLSelectElement, React.SelectHTMLAttrib
     ({ className, label, error, children, ...props }, ref) => {
         return (
             <div className="w-full flex flex-col gap-1.5">
-                {label && <label className="text-sm font-medium text-navy-900">{label}</label>}
+                {label && <label className="text-sm font-medium text-navy-dark">{label}</label>}
                 <select
                     className={cn(
-                        "flex h-12 w-full rounded-md border border-navy-200 bg-transparent px-3 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500 text-navy-900 disabled:cursor-not-allowed disabled:opacity-50",
+                        "flex h-12 w-full rounded-md border border-navy/30 bg-white px-3 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:border-gold text-navy-dark disabled:cursor-not-allowed disabled:opacity-50",
                         error && "border-red-500 focus-visible:ring-red-500",
                         className
                     )}

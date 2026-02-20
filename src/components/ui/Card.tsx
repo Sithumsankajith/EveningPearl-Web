@@ -9,8 +9,8 @@ export const Card = React.forwardRef<HTMLDivElement, HTMLMotionProps<'div'> & { 
                 ref={ref}
                 whileHover={hoverable ? { y: -4, transition: { duration: 0.2 } } : undefined}
                 className={cn(
-                    "rounded-2xl border border-navy-100 bg-white text-navy-950 shadow-sm transition-shadow overflow-hidden",
-                    hoverable && "hover:shadow-md",
+                    "rounded-2xl border border-navy-light/10 bg-white text-navy-dark shadow-sm shadow-navy/5 transition-all outline outline-1 outline-transparent",
+                    hoverable && "hover:shadow-md hover:shadow-navy/10 hover:outline-gold/50",
                     className
                 )}
                 {...props}

@@ -9,14 +9,14 @@ export interface ButtonProps extends HTMLMotionProps<'button'> {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
-        const baseClass = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500 disabled:opacity-50 disabled:pointer-events-none";
+        const baseClass = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-light disabled:opacity-50 disabled:pointer-events-none";
 
         const variants = {
-            primary: "bg-navy-800 text-white hover:bg-navy-900 shadow-sm",
-            secondary: "bg-navy-100 text-navy-900 hover:bg-navy-200",
-            accent: "bg-gold-500 text-white hover:bg-gold-600 shadow-sm",
-            outline: "border border-navy-200 bg-transparent hover:bg-navy-50 text-navy-800",
-            ghost: "bg-transparent hover:bg-navy-50 text-navy-800",
+            primary: "bg-navy-dark text-white hover:bg-navy shadow-sm hover:shadow-[0_0_15px_rgba(244,180,0,0.3)] transition-all",
+            secondary: "bg-white border-2 border-navy text-navy hover:bg-pearlWhite font-semibold",
+            accent: "bg-gold text-navy-dark hover:bg-gold-light shadow-sm font-bold",
+            outline: "border border-navy-light/50 bg-transparent hover:bg-pearlWhite text-navy",
+            ghost: "bg-transparent hover:bg-pearlWhite text-navy",
         };
 
         const sizes = {

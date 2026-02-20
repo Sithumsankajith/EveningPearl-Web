@@ -38,7 +38,7 @@ export default function FAQ() {
                 centered
             />
 
-            <div className="mt-12 bg-white rounded-3xl border border-navy-100 shadow-sm p-6 md:p-10">
+            <div className="mt-12 bg-white rounded-3xl border border-navy-light/20 shadow-sm p-6 md:p-10">
                 <Accordion items={FAQ_ITEMS} />
             </div>
         </div>

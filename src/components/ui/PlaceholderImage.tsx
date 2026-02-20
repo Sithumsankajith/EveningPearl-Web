@@ -20,7 +20,7 @@ export function PlaceholderImage({
         <div
             style={{ width, height }}
             className={cn(
-                'flex flex-col items-center justify-center bg-gradient-to-br from-navy-50 to-navy-100 text-navy-400 rounded-lg border border-navy-200 overflow-hidden',
+                'flex flex-col items-center justify-center bg-gradient-to-br from-navy-50 to-navy-light/20 text-navy-light rounded-lg border border-navy-light/50 overflow-hidden',
                 className
             )}
             {...props}
