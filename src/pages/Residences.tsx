@@ -145,8 +145,8 @@ export default function Residences() {
                                         <Badge variant="neutral" className="w-fit mb-5 bg-navy-50 text-navy-700 font-bold px-3 py-1">{room.type} Room</Badge>
 
                                         <div className="flex flex-col gap-1 border-y border-navy-100 py-4 mb-5">
-                                            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Monthly Rate</span>
-                                            <span className="font-bold text-navy-950 text-xl">{room.price}</span>
+                                            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Pricing</span>
+                                            <span className="font-bold text-navy-950 text-lg">{room.price}</span>
                                         </div>
 
                                         <div className="flex flex-wrap gap-2">
@@ -240,8 +240,8 @@ export default function Residences() {
                                     </ul>
 
                                     <div className="bg-white p-6 rounded-xl border border-navy-100 shadow-sm mb-6 text-center ring-1 ring-gold-500/10">
-                                        <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mb-1.5">Pricing From</p>
-                                        <p className="text-3xl font-bold text-navy-950">{selectedRoom.price}</p>
+                                        <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mb-1.5">Pricing</p>
+                                        <p className="text-xl font-bold text-navy-950">{selectedRoom.price}</p>
                                     </div>
 
                                     <Link to={`/contact?location=${activeLocation.toLowerCase()}`} className="block w-full">

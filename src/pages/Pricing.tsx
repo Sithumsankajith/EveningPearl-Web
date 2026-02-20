@@ -9,24 +9,24 @@ const PLANS = [
     {
         name: 'Basic Care',
         description: 'For independent seniors requiring minimal day-to-day assistance.',
-        price: 'From LKR 150,000',
-        period: '/ month',
+        price: 'Contact us for pricing',
+        period: '',
         features: ['Shared or Standard Single Room', '3 Nutritious Meals & Snacks', 'Daily Housekeeping & Laundry', '24/7 Emergency Response', 'Access to Common Areas', 'Basic Vital Monitoring'],
         recommended: false,
     },
     {
         name: 'Assisted Living',
         description: 'Comprehensive support for daily activities and medical coordination.',
-        price: 'From LKR 250,000',
-        period: '/ month',
+        price: 'Contact us for pricing',
+        period: '',
         features: ['Premium Single Room', 'Personal Hygiene & Dressing Support', 'Medication Administration', 'Specialized Diet Plans', 'Accompanied Medical Visits', 'Personalized Fitness Plan'],
         recommended: true,
     },
     {
         name: 'Premium Nursing',
         description: 'Dedicated, round-the-clock nursing care for high-need residents.',
-        price: 'From LKR 400,000',
-        period: '/ month',
+        price: 'Contact us for pricing',
+        period: '',
         features: ['Deluxe Room or Suite', '24/7 Dedicated Caregiver', 'Continuous Medical Monitoring', 'In-room Dining Services', 'Chauffeur Services for Appointments', 'Family Counseling & Support'],
         recommended: false,
     }
@@ -53,8 +53,8 @@ export default function Pricing() {
                             <h3 className="text-2xl font-serif text-navy-900 mb-2 font-bold">{plan.name}</h3>
                             <p className="text-slate-600 text-sm h-10">{plan.description}</p>
                             <div className="mt-8">
-                                <span className="text-3xl font-bold text-navy-900">{plan.price}</span>
-                                <span className="text-slate-500 font-medium ml-1">{plan.period}</span>
+                                <span className="text-2xl font-bold text-navy-900">{plan.price}</span>
+                                {plan.period && <span className="text-slate-500 font-medium ml-1">{plan.period}</span>}
                             </div>
                         </CardHeader>
                         <CardContent className="px-8 pb-8 flex-grow flex flex-col">
