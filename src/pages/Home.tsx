@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { PlaceholderImage } from '@/components/ui/PlaceholderImage';
-import { Shield, Heart, Clock, Phone, ArrowRight, Star, Quote } from 'lucide-react';
+import { Shield, Heart, Clock, Phone, ArrowRight, Star, Quote, MapPin, ImageIcon, ArrowRightCircle, CheckCircle2, TrendingUp, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { services, rooms, testimonials } from '@/data/mockData';
+import { services, rooms, testimonials, processSteps } from '@/data/mockData';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 
@@ -19,8 +18,12 @@ const HERO_IMAGES = [
     { text: "Serene Garden View", color: "bg-navy/5", image: mahara3Img },
 ];
 
+// Helper to assign images to services for the visual grid
+const SERVICE_IMAGES = [mahara2Img, maharaImg, mahara3Img, maharaImg, mahara2Img, mahara3Img];
+
 export default function Home() {
     const [currentImage, setCurrentImage] = useState(0);
+    const [selectedRoomId, setSelectedRoomId] = useState<string>(rooms[0]?.id || '');
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -29,23 +32,23 @@ export default function Home() {
         return () => clearInterval(timer);
     }, []);
 
+    const selectedRoom = rooms.find(r => r.id === selectedRoomId) || rooms[0];
+
     return (
         <div className="flex flex-col min-h-screen">
-            {/* Hero Section */}
-            <section className="relative h-[85vh] min-h-[600px] w-full overflow-hidden">
-                {/* Background Carousel */}
+            {/* Hero Section (Centered Redesign) */}
+            <section className="relative h-[85vh] min-h-[650px] w-full flex items-center justify-center">
                 <div className="absolute inset-0 z-0">
                     <AnimatePresence initial={false}>
                         <motion.div
                             key={currentImage}
-                            initial={{ x: '100%', opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            exit={{ x: '-100%', opacity: 0 }}
-                            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1.2, ease: "easeInOut" }}
                             className="absolute inset-0"
                         >
-                            <div className="absolute inset-0 bg-navy-dark/10 z-10" /> {/* Subtle dark overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/60 to-transparent z-15" /> {/* White fog overlay */}
+                            <div className="absolute inset-0 bg-navy-dark/40 z-10" />
                             <img
                                 src={HERO_IMAGES[currentImage].image}
                                 alt={HERO_IMAGES[currentImage].text}
@@ -55,210 +58,298 @@ export default function Home() {
                     </AnimatePresence>
                 </div>
 
-                {/* Content Overlay */}
-                <div className="relative z-20 h-full container mx-auto px-4 md:px-6 lg:max-w-7xl flex items-center">
+                {/* Hero Content (Centered) */}
+                <div className="relative z-20 container mx-auto px-4 md:px-6 flex flex-col items-center text-center mt-[-80px]">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                    >
+                        <span className="inline-block py-1.5 px-6 rounded-full bg-navy-dark/30 text-white font-semibold text-sm tracking-widest uppercase mb-6 border border-white/20 backdrop-blur-md">
+                            PREMIUM LUXURY LIVING
+                        </span>
+                    </motion.div>
+
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                         className="max-w-4xl"
                     >
-                        <span className="inline-block py-1.5 px-4 rounded-full bg-navy/10 text-navy font-bold shadow-sm text-sm tracking-wider uppercase mb-6 border border-navy/20 backdrop-blur-sm">
-                            Welcome to Evening Pearl
-                        </span>
-                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-navy-dark mb-6 leading-[1.1]">
-                            A New Standard of <br />
-                            <span className="text-gold-dark">Luxury Senior Living</span>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold text-white mb-6 leading-[1.15] tracking-tight">
+                            Where Compassion Meets Premium Care
                         </h1>
-                        <div className="w-32 h-1.5 rounded-full mb-8 bg-gold/50 relative overflow-hidden">
-                            <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-                        </div>
-                        <p className="text-lg md:text-xl lg:text-2xl text-navy-dark/90 mb-10 max-w-2xl leading-relaxed font-medium">
-                            Experience unparalleled care, comfort, and community in Sri Lanka's most prestigious residences. We ensure absolute peace of mind for you and your family.
+                        <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
+                            Experience luxury retirement living with personalized care, safety, and dignity for your loved ones.
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center gap-5">
-                            <Link to="/residences" className="w-full sm:w-auto">
-                                <Button variant="accent" size="lg" className="w-full sm:w-auto text-lg font-bold px-10 py-7 h-16 shadow-2xl shadow-gold/20 transition-transform hover:scale-105 active:scale-95">
-                                    Explore Rooms
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                            <Link to="/contact" className="w-full sm:w-auto">
+                                <Button className="w-full sm:w-auto bg-[#1cc0f4] hover:bg-[#1cc0f4]/90 text-white text-base font-bold px-8 py-6 h-14 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95">
+                                    Request Admission Info
                                 </Button>
                             </Link>
                             <Link to="/contact" className="w-full sm:w-auto">
-                                <Button variant="outline" size="lg" className="w-full sm:w-auto border-navy/40 text-navy-dark hover:bg-navy-dark hover:text-white text-lg font-bold px-10 py-7 h-16 backdrop-blur-sm transition-all hover:scale-105 active:scale-95">
-                                    Book a Visit
+                                <Button variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white/10 text-base font-bold px-8 py-6 h-14 rounded-full backdrop-blur-sm transition-all hover:scale-105 active:scale-95">
+                                    Schedule a Virtual Tour
                                 </Button>
                             </Link>
                         </div>
                     </motion.div>
                 </div>
 
-                {/* Carousel Indicators (Bottom Right) */}
-                <div className="absolute bottom-10 right-10 z-30 flex gap-3">
-                    {HERO_IMAGES.map((_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setCurrentImage(i)}
-                            className={`group relative h-1.5 transition-all duration-500 rounded-full ${currentImage === i ? 'w-12 bg-gold' : 'w-6 bg-white/30 hover:bg-white/50'}`}
-                            aria-label={`Go to slide ${i + 1}`}
-                        >
-                            <span className="absolute -top-6 left-0 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">0{i + 1}</span>
-                        </button>
-                    ))}
+                {/* Bottom Number Indicator */}
+                <div className="absolute bottom-[20%] right-8 z-30 text-white font-medium text-lg tracking-widest">
+                    {currentImage + 1} / {HERO_IMAGES.length}
                 </div>
-            </section>
 
-            {/* Trust Highlights */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4 md:px-6">
-                    <SectionHeader
-                        title="Excellence in Care"
-                        subtitle="Our commitment to your wellbeing is reflected in every aspect of our service."
-                        centered
-                    />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-                        {[
-                            { icon: Heart, title: 'Compassionate Care', desc: 'Trained, empathetic staff dedicated to your comfort.' },
-                            { icon: Shield, title: 'Uncompromising Safety', desc: 'Advanced security and emergency protocols 24/7.' },
-                            { icon: Clock, title: 'Round-the-clock Support', desc: 'Medical and daily assistance available at all times.' },
-                            { icon: Phone, title: 'Family Connection', desc: 'Seamless communication to keep loved ones updated.' }
-                        ].map((feature, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 0.5 }}
-                                className="flex flex-col items-center text-center p-8 bg-pearlWhite rounded-2xl border border-navy-light/20/50 hover:bg-navy-light/20 hover:border-navy-light/50 transition-all shadow-sm"
-                            >
-                                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm text-gold ring-1 ring-navy-light/20">
-                                    <feature.icon size={28} />
+                {/* Overlapping Info Card */}
+                <div className="absolute -bottom-20 left-4 right-4 md:left-10 md:right-10 lg:left-1/2 lg:-translate-x-1/2 lg:w-full lg:max-w-6xl z-40 hidden md:block">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
+                        className="bg-white rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] p-8 px-10 border border-navy-light/10"
+                    >
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 divide-x divide-navy-light/10">
+                            <div className="flex items-start gap-4 px-4">
+                                <Clock className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="text-navy-dark font-bold text-base mb-1">Years of Experience</h4>
+                                    <p className="text-navy-dark/60 text-xs leading-relaxed">Decades of trusted senior care expertise.</p>
                                 </div>
-                                <h3 className="text-xl font-serif font-semibold text-navy-dark mb-3">{feature.title}</h3>
-                                <p className="text-navy-dark/80 leading-relaxed text-sm">{feature.desc}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Services Preview */}
-            <section className="py-20 bg-pearlWhite">
-                <div className="container mx-auto px-4 md:px-6 lg:max-w-7xl">
-                    <SectionHeader
-                        title="Comprehensive Care Services"
-                        subtitle="Tailored support for every resident's unique needs to ensure a high quality of life."
-                        centered
-                    />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-                        {services.slice(0, 3).map((service, i) => (
-                            <Card key={i} hoverable className="h-full flex flex-col border-0 ring-1 ring-navy-light/10 shadow-sm rounded-2xl">
-                                <CardHeader className="pb-4 pt-8 px-6 bg-white">
-                                    <div className="w-12 h-12 rounded-xl bg-pearlWhite flex items-center justify-center mb-5 shadow-sm text-gold ring-1 ring-navy-light/20">
-                                        <Heart size={24} />
+                            </div>
+                            <div className="flex items-start gap-4 pl-8">
+                                <Shield className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="text-navy-dark font-bold text-base mb-1">24/7 Medical Support</h4>
+                                    <p className="text-navy-dark/60 text-xs leading-relaxed">Round-the-clock professional healthcare.</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4 pl-8">
+                                <Heart className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="text-navy-dark font-bold text-base mb-1">Secure & Comfortable</h4>
+                                    <p className="text-navy-dark/60 text-xs leading-relaxed">Designed for safety, comfort, and peace.</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4 pl-8">
+                                <Users className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="text-navy-dark font-bold text-base mb-1">Engaging Activities</h4>
+                                    <p className="text-navy-dark/60 text-xs leading-relaxed">Highly rated by families.</p>
+                                    <div className="flex gap-1 text-gold mt-1.5">
+                                        {[1, 2, 3, 4, 5].map(star => <Star key={star} size={10} fill="currentColor" />)}
+                                        <span className="text-navy-dark/40 text-[10px] ml-1 font-semibold block leading-[10px]">(4.9/5)</span>
                                     </div>
-                                    <h3 className="text-xl font-serif font-bold text-navy-dark mb-2">{service.title}</h3>
-                                    <p className="text-navy-dark/80 text-sm leading-relaxed">{service.shortDescription}</p>
-                                </CardHeader>
-                                <CardContent className="mt-auto pt-4 px-6 pb-8 bg-white">
-                                    <Link to="/services" className="text-gold font-bold text-sm hover:text-navy-light flex items-center gap-1 transition-colors">
-                                        Learn more <ArrowRight size={16} />
-                                    </Link>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                    <div className="mt-12 text-center">
-                        <Link to="/services">
-                            <Button variant="outline" size="md" className="font-semibold px-8 border-navy/30">View All Services</Button>
-                        </Link>
-                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mt-8 pt-6 border-t border-navy-light/10 text-center">
+                            <Link to="/testimonials" className="inline-flex flex-row items-center gap-2 text-sm font-bold text-navy hover:text-[#1cc0f4] transition-colors">
+                                <ArrowRightCircle size={16} />
+                                See Why Families Trust Evening Pearl
+                            </Link>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
-            {/* Residences Preview */}
-            <section className="py-20 bg-white">
+            {/* Added top padding to the next section to account for the overlapping absolute card */}
+            <div className="h-0 md:h-32 bg-white"></div>
+
+            {/* Services Grid Overlay (Redesigned) */}
+            <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 md:px-6 lg:max-w-7xl">
-                    <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+                    <div className="text-center mb-16">
                         <SectionHeader
-                            title="Featured Residences"
-                            subtitle="Discover our premium living spaces in Mahara and Mawaramandiya."
+                            title="Comprehensive Care Services"
+                            subtitle="Discover our comprehensive services providing person-centered support and engaging activities to enhance the well-being and quality of life for seniors."
+                            centered
                             className="mb-0"
                         />
-                        <Link to="/residences" className="shrink-0 mb-2">
-                            <Button variant="outline" size="md" className="font-semibold px-8 border-navy/30">Explore All Rooms</Button>
-                        </Link>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {rooms.slice(0, 3).map((room, i) => (
-                            <Card key={i} hoverable className="h-full flex flex-col border-0 ring-1 ring-navy-light/10 shadow-md overflow-hidden rounded-[2rem]">
-                                <div className="h-60 w-full relative">
-                                    <img
-                                        src={room.image}
-                                        alt={room.name}
-                                        className="w-full h-full object-cover rounded-t-[2rem]"
-                                    />
-                                    <div className="absolute top-5 right-5">
-                                        <Badge variant={room.availability === 'Available' ? 'success' : 'warning'} className="shadow-md backdrop-blur-md bg-white/95 px-3 py-1 font-bold">
-                                            {room.availability}
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {services.map((service, i) => (
+                            <Link to="/services" key={i} className="group relative h-[250px] md:h-[280px] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500 block">
+                                <img
+                                    src={SERVICE_IMAGES[i % SERVICE_IMAGES.length]}
+                                    alt={service.title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent pointer-events-none transition-opacity duration-300 group-hover:from-navy/90" />
+                                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col items-center justify-end text-center">
+                                    <h3 className="text-xl font-bold text-white mb-0 transform transition-transform duration-300 group-hover:-translate-y-4">{service.title}</h3>
+                                    <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 absolute bottom-6">
+                                        <Badge variant="accent" className="bg-gold hover:bg-gold-light text-navy-dark border-none font-bold px-4 py-1.5 pointer-events-auto shadow-sm">
+                                            Read More
                                         </Badge>
                                     </div>
                                 </div>
-                                <CardHeader className="pb-4 pt-8 px-6 bg-white">
-                                    <h4 className="text-xl font-serif font-bold text-navy-dark leading-tight mb-3">{room.name}</h4>
-                                    <Badge variant="neutral" className="w-fit mb-4 bg-pearlWhite text-navy font-bold px-3 py-1">{room.location}</Badge>
-                                </CardHeader>
-                                <CardContent className="mt-auto pt-2 px-6 pb-6 bg-white">
-                                    <Link to={`/residences?location=${room.location}`}>
-                                        <Button variant="secondary" className="w-full text-sm font-semibold h-11 border-navy/20">
-                                            View Details
-                                        </Button>
-                                    </Link>
-                                </CardContent>
-                            </Card>
+                            </Link>
                         ))}
+                    </div>
+
+                    <div className="mt-14 text-center pb-8 border-b border-navy-light/10">
+                        <Link to="/services">
+                            <Button variant="outline" className="font-semibold px-8 py-6 h-auto text-navy border-navy/30 rounded-full hover:bg-navy hover:text-white transition-colors shadow-sm">
+                                View All Services
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Testimonials */}
+            {/* Process Steps Section (New) */}
+            <section className="py-16 bg-white">
+                <div className="container mx-auto px-4 md:px-6 lg:max-w-6xl">
+                    <div className="relative">
+                        {/* Connecting Line (Desktop) */}
+                        <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-0.5 border-t-2 border-dashed border-navy-light/30 z-0"></div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative z-10">
+                            {processSteps.map((step, index) => (
+                                <div key={step.id} className="flex flex-col items-center text-center">
+                                    <div className="w-20 h-20 rounded-full bg-[#4939f4] text-white flex items-center justify-center text-3xl font-bold mb-8 shadow-lg shadow-navy/10 mx-auto">
+                                        {step.number}
+                                    </div>
+                                    <h3 className="text-2xl font-serif font-bold text-navy-dark mb-4">{step.title}</h3>
+                                    <p className="text-navy-dark/70 leading-relaxed px-4">{step.description}</p>
+                                    {index === 1 && (
+                                        <div className="mt-8">
+                                            <Button variant="accent" className="bg-[#1cc0f4] hover:bg-[#1cc0f4]/90 text-white font-bold rounded-full px-8 py-6 h-auto shadow-md">
+                                                Learn More About Our Services
+                                            </Button>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials (Avatar Grid Redesign) */}
             <section className="py-20 bg-pearlWhite">
                 <div className="container mx-auto px-4 md:px-6 lg:max-w-7xl">
-                    <SectionHeader
-                        title="What Families Say"
-                        subtitle="Real stories from our residents and their loved ones."
-                        centered
-                    />
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto">
+                    <div className="text-center mb-16">
+                        <Badge variant="neutral" className="mb-4 bg-white text-navy font-bold px-4 py-1.5 uppercase tracking-widest text-xs rounded-full shadow-sm">TESTIMONIALS</Badge>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-dark mb-4">Our Happy Customers</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {testimonials.map((t, i) => (
-                            <Card key={i} hoverable className="bg-white border-0 ring-1 ring-navy-light/10 shadow-sm p-8 rounded-3xl relative">
-                                <Quote className="absolute top-8 right-8 text-gold-light/20 w-16 h-16" />
-                                <div className="flex gap-1 text-gold mb-6 relative z-10">
-                                    {[1, 2, 3, 4, 5].map(star => <Star key={star} size={18} fill="currentColor" />)}
+                            <div key={i} className="flex flex-col items-center text-center px-4">
+                                <img src={t.avatar || 'https://via.placeholder.com/150'} alt={t.name} className="w-24 h-24 rounded-full mb-6 border-4 border-white shadow-sm object-cover" />
+                                <h4 className="font-bold text-navy-dark text-lg mb-1">{t.name}</h4>
+                                <p className="text-navy-dark/60 text-sm mb-4">{t.relation}</p>
+                                <div className="flex gap-1 text-gold mb-5">
+                                    {[1, 2, 3, 4, 5].map(star => <Star key={star} size={14} fill="currentColor" />)}
                                 </div>
-                                <p className="text-navy-dark/90 italic text-lg leading-relaxed mb-8 relative z-10">"{t.text}"</p>
-                                <div className="flex flex-col relative z-10">
-                                    <span className="font-bold text-navy-dark font-serif text-lg">{t.name}</span>
-                                    <span className="text-sm font-semibold text-gold">{t.relation} • {t.location}</span>
-                                </div>
-                            </Card>
+                                <Quote className="text-navy-light/10 w-8 h-8 mb-3 rotate-180" />
+                                <p className="text-navy-dark/80 text-sm italic leading-relaxed">"{t.text}"</p>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="py-16 lg:py-24 bg-navy-dark relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-navy-light/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-                <div className="container mx-auto px-4 md:px-6 lg:max-w-7xl relative z-10 text-center flex flex-col items-center">
-                    <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 font-bold">Ready to see it for yourself?</h2>
-                    <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                        Schedule a personalized tour of our Mahara or Mawaramandiya residences. Meet our care team and experience the Evening Pearl standard.
-                    </p>
-                    <Link to="/contact">
-                        <Button variant="accent" size="lg" className="text-base font-bold px-10 py-6 h-14">
-                            Schedule a Tour
-                        </Button>
-                    </Link>
+            {/* Featured Residences (Split View Redesign) */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4 md:px-6 lg:max-w-6xl">
+                    <div className="mb-12">
+                        <Badge variant="neutral" className="mb-4 bg-pearlWhite text-navy font-bold px-4 py-1.5 uppercase tracking-widest text-xs rounded-full shadow-sm">OUR HOMES</Badge>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-dark mb-3">Designed with Modern Comforts and Amenities</h2>
+                        <p className="text-navy-dark/70 max-w-2xl">Exciting times are ahead as Evening Pearl prepares to open our brand-new, state-of-the-art facility in Sri Lanka.</p>
+                    </div>
+
+                    <div className="grid lg:grid-cols-12 gap-8 items-stretch pt-4">
+                        {/* Tabs (Left) */}
+                        <div className="lg:col-span-4 flex flex-col gap-4">
+                            {rooms.slice(0, 3).map((room, i) => {
+                                const isSelected = selectedRoom?.id === room.id;
+                                return (
+                                    <button
+                                        key={room.id}
+                                        onClick={() => setSelectedRoomId(room.id)}
+                                        className={`w-full text-left p-4 rounded-xl flex items-center gap-4 transition-all focus:outline-none ${isSelected ? 'border-2 border-[#4939f4] bg-pearlWhite/50 shadow-sm' : 'border border-navy-light/10 bg-white hover:border-navy-light/30 shadow-sm'}`}
+                                    >
+                                        <img src={room.image} alt={room.name} className="w-16 h-16 rounded-lg object-cover" />
+                                        <div className="flex-1">
+                                            <h4 className="font-bold text-navy-dark text-lg">{room.location}</h4>
+                                            <p className="text-xs text-navy-dark/60 mt-1 uppercase tracking-wider font-semibold">
+                                                {room.availability === 'Available' ? 'Admission Open' : 'Waitlist'}
+                                            </p>
+                                        </div>
+                                    </button>
+                                );
+                            })}
+                        </div>
+
+                        {/* Details (Right) */}
+                        <div className="lg:col-span-8 flex">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={selectedRoom.id}
+                                    initial={{ opacity: 0, x: 10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -10 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="bg-white border border-navy-light/10 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-8 w-full"
+                                >
+                                    <div className="w-full md:w-[45%] h-64 md:h-auto min-h-[250px] rounded-xl overflow-hidden relative shadow-sm">
+                                        <img src={selectedRoom.image} alt={selectedRoom.location} className="w-full h-full object-cover absolute inset-0" />
+                                    </div>
+                                    <div className="w-full md:w-[55%] flex flex-col pt-2 pb-4">
+                                        <div className="flex items-center gap-3 mb-6">
+                                            <h3 className="text-2xl font-bold text-navy-dark">{selectedRoom.location}</h3>
+                                            <Badge variant={selectedRoom.availability === 'Available' ? 'default' : 'warning'} className={`px-3 py-1 text-xs font-semibold rounded-full border ${selectedRoom.availability === 'Available' ? 'bg-transparent border-[#4939f4] text-[#4939f4]' : ''}`}>
+                                                {selectedRoom.availability === 'Available' ? 'Admission Open' : 'Waitlist'}
+                                            </Badge>
+                                        </div>
+                                        <p className="text-navy-dark/70 text-sm leading-relaxed mb-6">
+                                            Our {selectedRoom.location} Luxury Care Home featuring Individual Rooms with Ensuite Bathroom, Private Balcony, Beautiful Garden Space, 24/7 medical support, Personalized care, Nutritious Meals
+                                        </p>
+                                        <div className="flex items-start gap-2 text-sm text-navy-dark/70 mb-8 font-medium">
+                                            <MapPin className="w-4 h-4 text-[#4939f4] shrink-0 mt-0.5" />
+                                            <span>Green Wood Terrace, 390 P Old Kottawa Rd, {selectedRoom.location}</span>
+                                        </div>
+                                        <div className="flex items-center gap-4 mt-auto pt-4 border-t border-navy-light/10">
+                                            <a href="tel:+94776604040">
+                                                <Button variant="outline" className="border-[#4939f4] text-[#4939f4] hover:bg-[#4939f4] hover:text-white rounded-md gap-2 font-semibold">
+                                                    <Phone size={14} /> +94776604040
+                                                </Button>
+                                            </a>
+                                            <Link to="/gallery" className="text-[#4939f4] font-bold text-sm hover:text-navy-dark transition-colors flex items-center gap-1.5 ml-2">
+                                                <ImageIcon size={16} /> View Gallery
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Virtual Tour CTA - Adapted to Concept */}
+            <section className="py-20 bg-pearlWhite relative overflow-hidden">
+                <div className="container mx-auto px-4 md:px-6 lg:max-w-7xl flex flex-col md:flex-row items-center gap-12">
+                    <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg h-[400px]">
+                        <img src={maharaImg} alt="Virtual Tour" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="w-full md:w-1/2">
+                        <Badge variant="neutral" className="mb-5 bg-white text-navy font-bold px-4 py-1.5 uppercase tracking-widest text-xs rounded-full shadow-sm">VIRTUAL TOUR</Badge>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-dark mb-6">Experience Our Homelike Environment</h2>
+                        <p className="text-navy-dark/70 text-lg leading-relaxed mb-8">
+                            Take a virtual tour of Evening Pearl and see our warm, comfortable facilities where seniors thrive. Discover our compassionate environment, specialized care areas, and vibrant community spaces designed for comfort, safety, and well-being.
+                        </p>
+                        <Link to="/contact">
+                            <Button variant="accent" className="bg-[#1cc0f4] hover:bg-[#1cc0f4]/90 text-white font-bold rounded-full px-8 py-6 h-auto shadow-md">
+                                Schedule a Visit
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </div>

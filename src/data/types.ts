@@ -31,4 +31,12 @@ export interface Testimonial {
     relation: string;
     text: string;
     location: Location;
+    avatar?: string;
+}
+
+export interface ProcessStep {
+    id: string;
+    number: number;
+    title: string;
+    description: string;
 }

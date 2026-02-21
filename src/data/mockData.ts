@@ -1,4 +1,4 @@
-import { Room, Service, Testimonial } from './types';
+import { Room, Service, Testimonial, ProcessStep } from './types';
 import maharaImg from '@/assets/mahara.png';
 import mahara2Img from '@/assets/mahara2.png';
 import mahara3Img from '@/assets/mahara3.png';
@@ -117,13 +117,52 @@ export const testimonials: Testimonial[] = [
         name: 'Amara Weerasinghe',
         relation: 'Daughter of Resident',
         text: 'Moving our mother to Evening Pearl was the best decision we ever made. The staff is unbelievably caring, and the facilities in Mahara feel like a luxury hotel. She is happier and healthier than she has been in years.',
-        location: 'Mahara'
+        location: 'Mahara',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Amara&backgroundColor=f8f9fa'
     },
     {
         id: 't-2',
         name: 'Dr. Rohan Perera',
         relation: 'Resident',
         text: 'After retiring from a long medical career, I sought a place that understood both comfort and proper healthcare protocols. Mawaramandiya Residence exceeds all my expectations. It is truly a premium living experience with peace of mind.',
-        location: 'Mawaramandiya'
+        location: 'Mawaramandiya',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rohan&backgroundColor=e6f0fa'
+    },
+    {
+        id: 't-3',
+        name: 'Kamitha Perera',
+        relation: 'Son of Resident',
+        text: 'The daily activities and the serene environment have given my father a new lease on life. The nursing staff is attentive and the food is fantastic.',
+        location: 'Mahara',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Kamitha&backgroundColor=fff0e6'
+    },
+    {
+        id: 't-4',
+        name: 'Nalini Fernando',
+        relation: 'Resident',
+        text: 'I love my room overlooking the garden. The community here is wonderful, and I feel safe and well-cared for every single day.',
+        location: 'Mawaramandiya',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Nalini&backgroundColor=e6fae6'
+    }
+];
+
+export const processSteps: ProcessStep[] = [
+    {
+        id: 'ps-1',
+        number: 1,
+        title: 'Select Package',
+        description: 'Choose the most suitable care package and residence location for your loved ones.'
+    },
+    {
+        id: 'ps-2',
+        number: 2,
+        title: 'Onboard & Consult',
+        description: 'Meet with our care team to personalize the experience and finalize all arrangements.'
+    },
+    {
+        id: 'ps-3',
+        number: 3,
+        title: 'Admit your Loved Ones',
+        description: 'Experience a smooth transition as your loved one settles into their new luxury home.'
     }
 ];
