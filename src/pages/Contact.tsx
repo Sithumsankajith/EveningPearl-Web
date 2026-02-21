@@ -6,14 +6,14 @@ import { MapPin, Phone, Mail, MessageSquare, CheckCircle2, AlertCircle } from 'l
 
 // --- GOOGLE FORM CONFIGURATION ---
 // Replace these with your actual details from the implementation plan instructions
-const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfQnM_zw2MKiRBzEvG4DbS32pJOYc-Fw_dHJSPEsnBGcl6Jwg/formResponse';
 const ENTRY_IDS = {
-    firstName: 'entry.123456789',
-    lastName: 'entry.987654321',
-    phone: 'entry.111111111',
-    email: 'entry.222222222',
-    location: 'entry.333333333',
-    message: 'entry.444444444',
+    firstName: 'entry.1095735974',
+    lastName: 'entry.705766239',
+    phone: 'entry.754562243',
+    email: 'entry.397867534',
+    location: 'entry.1679011490',
+    message: 'entry.734612953',
 };
 
 export default function Contact() {
@@ -37,7 +37,7 @@ export default function Contact() {
         e.preventDefault();
         setStatus('submitting');
 
-        const data = new FormData();
+        const data = new URLSearchParams();
         data.append(ENTRY_IDS.firstName, formData.firstName);
         data.append(ENTRY_IDS.lastName, formData.lastName);
         data.append(ENTRY_IDS.phone, formData.phone);
@@ -47,12 +47,14 @@ export default function Contact() {
 
         try {
             // Using mode: 'no-cors' as Google Forms doesn't return CORS headers for formResponse
-            // This means we won't know if it actually succeeded from the response, 
-            // but the browser will send the data.
+            // URLSearchParams ensures the content-type is 'application/x-www-form-urlencoded'
             await fetch(GOOGLE_FORM_ACTION_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                body: data
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: data.toString()
             });
 
             setStatus('success');
@@ -159,8 +161,8 @@ export default function Contact() {
                                     disabled={status === 'submitting'}
                                 >
                                     <option value="">No preference / Not sure yet</option>
-                                    <option value="mahara">Mahara Residence</option>
-                                    <option value="mawaramandiya">Mawaramandiya Residence</option>
+                                    <option value="Mahara Residence">Mahara Residence</option>
+                                    <option value="Mawaramandiya Residence">Mawaramandiya Residence</option>
                                 </Select>
                                 <Textarea
                                     label="Message or Questions"

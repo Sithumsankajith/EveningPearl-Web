@@ -84,7 +84,7 @@ export default function Home() {
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                             <Link to="/contact" className="w-full sm:w-auto">
-                                <Button className="w-full sm:w-auto bg-[#1cc0f4] hover:bg-[#1cc0f4]/90 text-white text-base font-bold px-8 py-6 h-14 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95">
+                                <Button className="w-full sm:w-auto bg-gold hover:bg-gold-soft text-navy-dark text-base font-bold px-8 py-6 h-14 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95">
                                     Request Admission Info
                                 </Button>
                             </Link>
@@ -112,28 +112,28 @@ export default function Home() {
                     >
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 divide-x divide-navy-light/10">
                             <div className="flex items-start gap-4 px-4">
-                                <Clock className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <Clock className="text-gold w-8 h-8 shrink-0 mt-1" />
                                 <div>
                                     <h4 className="text-navy-dark font-bold text-base mb-1">Years of Experience</h4>
                                     <p className="text-navy-dark/60 text-xs leading-relaxed">Decades of trusted senior care expertise.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 pl-8">
-                                <Shield className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <Shield className="text-gold w-8 h-8 shrink-0 mt-1" />
                                 <div>
                                     <h4 className="text-navy-dark font-bold text-base mb-1">24/7 Medical Support</h4>
                                     <p className="text-navy-dark/60 text-xs leading-relaxed">Round-the-clock professional healthcare.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 pl-8">
-                                <Heart className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <Heart className="text-gold w-8 h-8 shrink-0 mt-1" />
                                 <div>
                                     <h4 className="text-navy-dark font-bold text-base mb-1">Secure & Comfortable</h4>
                                     <p className="text-navy-dark/60 text-xs leading-relaxed">Designed for safety, comfort, and peace.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 pl-8">
-                                <Users className="text-[#1cc0f4] w-8 h-8 shrink-0 mt-1" />
+                                <Users className="text-gold w-8 h-8 shrink-0 mt-1" />
                                 <div>
                                     <h4 className="text-navy-dark font-bold text-base mb-1">Engaging Activities</h4>
                                     <p className="text-navy-dark/60 text-xs leading-relaxed">Highly rated by families.</p>
@@ -145,7 +145,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="mt-8 pt-6 border-t border-navy-light/10 text-center">
-                            <Link to="/testimonials" className="inline-flex flex-row items-center gap-2 text-sm font-bold text-navy hover:text-[#1cc0f4] transition-colors">
+                            <Link to="/testimonials" className="inline-flex flex-row items-center gap-2 text-sm font-bold text-navy hover:text-gold transition-colors">
                                 <ArrowRightCircle size={16} />
                                 See Why Families Trust Evening Pearl
                             </Link>
@@ -210,14 +210,14 @@ export default function Home() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative z-10">
                             {processSteps.map((step, index) => (
                                 <div key={step.id} className="flex flex-col items-center text-center">
-                                    <div className="w-20 h-20 rounded-full bg-[#4939f4] text-white flex items-center justify-center text-3xl font-bold mb-8 shadow-lg shadow-navy/10 mx-auto">
+                                    <div className="w-20 h-20 rounded-full bg-gold text-navy-dark flex items-center justify-center text-3xl font-bold mb-8 shadow-lg shadow-navy/10 mx-auto">
                                         {step.number}
                                     </div>
                                     <h3 className="text-2xl font-serif font-bold text-navy-dark mb-4">{step.title}</h3>
                                     <p className="text-navy-dark/70 leading-relaxed px-4">{step.description}</p>
                                     {index === 1 && (
                                         <div className="mt-8">
-                                            <Button variant="accent" className="bg-[#1cc0f4] hover:bg-[#1cc0f4]/90 text-white font-bold rounded-full px-8 py-6 h-auto shadow-md">
+                                            <Button variant="accent" className="bg-gold hover:bg-gold-soft text-navy-dark font-bold rounded-full px-8 py-6 h-auto shadow-md">
                                                 Learn More About Our Services
                                             </Button>
                                         </div>
@@ -272,7 +272,7 @@ export default function Home() {
                                     <button
                                         key={room.id}
                                         onClick={() => setSelectedRoomId(room.id)}
-                                        className={`w-full text-left p-4 rounded-xl flex items-center gap-4 transition-all focus:outline-none ${isSelected ? 'border-2 border-[#4939f4] bg-pearlWhite/50 shadow-sm' : 'border border-navy-light/10 bg-white hover:border-navy-light/30 shadow-sm'}`}
+                                        className={`w-full text-left p-4 rounded-xl flex items-center gap-4 transition-all focus:outline-none ${isSelected ? 'border-2 border-gold bg-pearlWhite/50 shadow-sm' : 'border border-navy-light/10 bg-white hover:border-navy-light/30 shadow-sm'}`}
                                     >
                                         <img src={room.image} alt={room.name} className="w-16 h-16 rounded-lg object-cover" />
                                         <div className="flex-1">
@@ -303,7 +303,7 @@ export default function Home() {
                                     <div className="w-full md:w-[55%] flex flex-col pt-2 pb-4">
                                         <div className="flex items-center gap-3 mb-6">
                                             <h3 className="text-2xl font-bold text-navy-dark">{selectedRoom.location}</h3>
-                                            <Badge variant={selectedRoom.availability === 'Available' ? 'default' : 'warning'} className={`px-3 py-1 text-xs font-semibold rounded-full border ${selectedRoom.availability === 'Available' ? 'bg-transparent border-[#4939f4] text-[#4939f4]' : ''}`}>
+                                            <Badge variant={selectedRoom.availability === 'Available' ? 'default' : 'warning'} className={`px-3 py-1 text-xs font-semibold rounded-full border ${selectedRoom.availability === 'Available' ? 'bg-transparent border-gold text-navy-dark' : ''}`}>
                                                 {selectedRoom.availability === 'Available' ? 'Admission Open' : 'Waitlist'}
                                             </Badge>
                                         </div>
@@ -311,16 +311,16 @@ export default function Home() {
                                             Our {selectedRoom.location} Luxury Care Home featuring Individual Rooms with Ensuite Bathroom, Private Balcony, Beautiful Garden Space, 24/7 medical support, Personalized care, Nutritious Meals
                                         </p>
                                         <div className="flex items-start gap-2 text-sm text-navy-dark/70 mb-8 font-medium">
-                                            <MapPin className="w-4 h-4 text-[#4939f4] shrink-0 mt-0.5" />
+                                            <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                                             <span>Green Wood Terrace, 390 P Old Kottawa Rd, {selectedRoom.location}</span>
                                         </div>
                                         <div className="flex items-center gap-4 mt-auto pt-4 border-t border-navy-light/10">
                                             <a href="tel:+94776604040">
-                                                <Button variant="outline" className="border-[#4939f4] text-[#4939f4] hover:bg-[#4939f4] hover:text-white rounded-md gap-2 font-semibold">
+                                                <Button variant="outline" className="border-gold text-navy-dark hover:bg-gold hover:border-gold rounded-md gap-2 font-semibold">
                                                     <Phone size={14} /> +94776604040
                                                 </Button>
                                             </a>
-                                            <Link to="/gallery" className="text-[#4939f4] font-bold text-sm hover:text-navy-dark transition-colors flex items-center gap-1.5 ml-2">
+                                            <Link to="/gallery" className="text-gold font-bold text-sm hover:text-navy-dark transition-colors flex items-center gap-1.5 ml-2">
                                                 <ImageIcon size={16} /> View Gallery
                                             </Link>
                                         </div>
@@ -345,7 +345,7 @@ export default function Home() {
                             Take a virtual tour of Evening Pearl and see our warm, comfortable facilities where seniors thrive. Discover our compassionate environment, specialized care areas, and vibrant community spaces designed for comfort, safety, and well-being.
                         </p>
                         <Link to="/contact">
-                            <Button variant="accent" className="bg-[#1cc0f4] hover:bg-[#1cc0f4]/90 text-white font-bold rounded-full px-8 py-6 h-auto shadow-md">
+                            <Button variant="accent" className="bg-gold hover:bg-gold-soft text-navy-dark font-bold rounded-full px-8 py-6 h-auto shadow-md">
                                 Schedule a Visit
                             </Button>
                         </Link>

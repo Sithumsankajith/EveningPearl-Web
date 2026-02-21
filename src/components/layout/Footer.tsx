@@ -18,13 +18,13 @@ export function Footer() {
                             At Evening Pearl, we provide compassionate, personalized senior care in a warm and welcoming environment. Our dedicated team ensures comfort, safety, and dignity, treating every resident like family.
                         </p>
                         <div className="flex items-center gap-4">
-                            <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1cc0f4] hover:text-white transition-colors">
+                            <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors">
                                 <Facebook size={16} />
                             </a>
-                            <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1cc0f4] hover:text-white transition-colors">
+                            <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors">
                                 <Instagram size={16} />
                             </a>
-                            <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1cc0f4] hover:text-white transition-colors">
+                            <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors">
                                 <Twitter size={16} />
                             </a>
                         </div>
@@ -34,12 +34,12 @@ export function Footer() {
                     <div>
                         <h4 className="text-white font-semibold mb-6 tracking-wide text-base">Quick Links</h4>
                         <ul className="space-y-4 text-sm text-slate-300">
-                            <li><Link to="/" className="hover:text-[#1cc0f4] transition-colors">Home</Link></li>
-                            <li><Link to="/services" className="hover:text-[#1cc0f4] transition-colors">Our Services</Link></li>
-                            <li><Link to="/gallery" className="hover:text-[#1cc0f4] transition-colors">Gallery</Link></li>
-                            <li><Link to="/about" className="hover:text-[#1cc0f4] transition-colors">About Us</Link></li>
-                            <li><Link to="/faq" className="hover:text-[#1cc0f4] transition-colors">FAQ</Link></li>
-                            <li><Link to="/residences" className="hover:text-[#1cc0f4] transition-colors">How It Works</Link></li>
+                            <li><Link to="/" className="hover:text-gold transition-colors">Home</Link></li>
+                            <li><Link to="/services" className="hover:text-gold transition-colors">Our Services</Link></li>
+                            <li><Link to="/gallery" className="hover:text-gold transition-colors">Gallery</Link></li>
+                            <li><Link to="/about" className="hover:text-gold transition-colors">About Us</Link></li>
+                            <li><Link to="/faq" className="hover:text-gold transition-colors">FAQ</Link></li>
+                            <li><Link to="/residences" className="hover:text-gold transition-colors">How It Works</Link></li>
                         </ul>
                     </div>
 
@@ -47,12 +47,12 @@ export function Footer() {
                     <div>
                         <h4 className="text-white font-semibold mb-6 tracking-wide text-base">Our Services</h4>
                         <ul className="space-y-4 text-sm text-slate-300">
-                            <li><Link to="/services" className="hover:text-[#1cc0f4] transition-colors">Assisted Living</Link></li>
-                            <li><Link to="/services" className="hover:text-[#1cc0f4] transition-colors">Housekeeping & Laundry Services</Link></li>
-                            <li><Link to="/services" className="hover:text-[#1cc0f4] transition-colors">Recreation & Wellness</Link></li>
-                            <li><Link to="/services" className="hover:text-[#1cc0f4] transition-colors">Nursing & Medication</Link></li>
-                            <li><Link to="/services" className="hover:text-[#1cc0f4] transition-colors">Nutritious Meals</Link></li>
-                            <li><Link to="/services" className="hover:text-[#1cc0f4] transition-colors">Security & Monitoring</Link></li>
+                            <li><Link to="/services" className="hover:text-gold transition-colors">Assisted Living</Link></li>
+                            <li><Link to="/services" className="hover:text-gold transition-colors">Housekeeping & Laundry Services</Link></li>
+                            <li><Link to="/services" className="hover:text-gold transition-colors">Recreation & Wellness</Link></li>
+                            <li><Link to="/services" className="hover:text-gold transition-colors">Nursing & Medication</Link></li>
+                            <li><Link to="/services" className="hover:text-gold transition-colors">Nutritious Meals</Link></li>
+                            <li><Link to="/services" className="hover:text-gold transition-colors">Security & Monitoring</Link></li>
                         </ul>
                     </div>
 
@@ -62,26 +62,26 @@ export function Footer() {
                         <ul className="space-y-6 text-sm text-slate-300">
                             <li>
                                 <div className="flex items-center gap-2 mb-1">
-                                    <Phone size={16} className="text-[#1cc0f4]" />
+                                    <Phone size={16} className="text-gold" />
                                     <span className="font-bold text-white">Call / WhatsApp</span>
                                 </div>
                                 <div className="pl-6 flex flex-col gap-1">
-                                    <a href="tel:+94112345678" className="hover:text-[#1cc0f4]">+94 11 234 5678 (Mahara)</a>
-                                    <a href="tel:+94112345679" className="hover:text-[#1cc0f4]">+94 11 234 5679 (Mawaramandiya)</a>
+                                    <a href="tel:+94112345678" className="hover:text-gold">+94 11 234 5678 (Mahara)</a>
+                                    <a href="tel:+94112345679" className="hover:text-gold">+94 11 234 5679 (Mawaramandiya)</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="flex items-center gap-2 mb-1">
-                                    <Mail size={16} className="text-[#1cc0f4]" />
+                                    <Mail size={16} className="text-gold" />
                                     <span className="font-bold text-white">Email</span>
                                 </div>
                                 <div className="pl-6">
-                                    <a href="mailto:hello@eveningpearl.lk" className="hover:text-[#1cc0f4]">hello@eveningpearl.lk</a>
+                                    <a href="mailto:hello@eveningpearl.lk" className="hover:text-gold">hello@eveningpearl.lk</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="flex items-center gap-2 mb-1">
-                                    <MapPin size={16} className="text-[#1cc0f4]" />
+                                    <MapPin size={16} className="text-gold" />
                                     <span className="font-bold text-white">Office Location</span>
                                 </div>
                                 <div className="pl-6 leading-relaxed">
