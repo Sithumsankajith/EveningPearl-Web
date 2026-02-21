@@ -20,8 +20,8 @@ export default {
         pearlWhite: "#F7F9FC"
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        sans: ['Salda Soft', 'Inter', 'sans-serif'],
+        serif: ['Salda Soft', 'serif'],
       }
     },
   },

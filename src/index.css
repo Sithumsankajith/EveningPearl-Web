@@ -1,5 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
+@font-face {
+  font-family: 'Salda Soft';
+  src: url('./assets/fonts/SaldaSoft Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Salda Soft';
+  src: url('./assets/fonts/SaldaSoft RegularIt.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Salda Soft';
+  src: url('./assets/fonts/SaldaSoft Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Salda Soft';
+  src: url('./assets/fonts/SaldaSoft Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Salda Soft';
+  src: url('./assets/fonts/SaldaSoft Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Salda Soft';
+  src: url('./assets/fonts/SaldaSoft Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +49,7 @@
 @layer base {
   body {
     @apply bg-white antialiased;
+    font-family: 'Salda Soft', 'Inter', sans-serif;
     color: theme('colors.navy.dark');
     margin: 0;
     padding: 0;
@@ -18,7 +61,8 @@
   h4,
   h5,
   h6 {
-    @apply font-serif;
+    font-family: 'Salda Soft', serif;
+    font-weight: 700;
   }
 }
 
@@ -51,4 +95,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.amp {
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0 0.1em;
 }

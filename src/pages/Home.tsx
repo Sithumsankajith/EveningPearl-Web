@@ -21,6 +21,18 @@ const HERO_IMAGES = [
 // Helper to assign images to services for the visual grid
 const SERVICE_IMAGES = [mahara2Img, maharaImg, mahara3Img, maharaImg, mahara2Img, mahara3Img];
 
+const renderStyledText = (text: string) => {
+    if (!text.includes('&')) return text;
+    const parts = text.split('&');
+    return (
+        <>
+            {parts[0]}
+            <span className="amp">&</span>
+            {parts[1]}
+        </>
+    );
+};
+
 export default function Home() {
     const [currentImage, setCurrentImage] = useState(0);
     const [selectedRoomId, setSelectedRoomId] = useState<string>(rooms[0]?.id || '');
@@ -213,7 +225,7 @@ export default function Home() {
                                     <div className="w-20 h-20 rounded-full bg-gold text-navy-dark flex items-center justify-center text-3xl font-bold mb-8 shadow-lg shadow-navy/10 mx-auto">
                                         {step.number}
                                     </div>
-                                    <h3 className="text-2xl font-serif font-bold text-navy-dark mb-4">{step.title}</h3>
+                                    <h3 className="text-2xl font-serif font-bold text-navy-dark mb-4">{renderStyledText(step.title)}</h3>
                                     <p className="text-navy-dark/70 leading-relaxed px-4">{step.description}</p>
                                     {index === 1 && (
                                         <div className="mt-8">
