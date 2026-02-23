@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { rooms } from '@/data/mockData';
+import { rooms, residences } from '@/data/mockData';
 import { Room, Location } from '@/data/types';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Tabs } from '@/components/ui/Tabs';
@@ -94,7 +94,11 @@ export default function Residences() {
                 {/* Residence Overview Card */}
                 <div className="bg-navy-dark rounded-[2rem] overflow-hidden shadow-xl shadow-navy-dark/10 mb-16 flex flex-col md:flex-row border border-navy relative z-0">
                     <div className="md:w-2/5 md:max-w-md h-64 md:h-auto">
-                        <PlaceholderImage text={`${activeLocation} Exterior`} className="w-full h-full object-cover opacity-80" />
+                        <img
+                            src={residences.find(r => r.id === activeLocation)?.image}
+                            alt={`${activeLocation} Exterior`}
+                            className="w-full h-full object-cover opacity-80"
+                        />
                     </div>
                     <div className="md:w-3/5 p-8 md:p-12 text-white flex flex-col justify-center relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl" />

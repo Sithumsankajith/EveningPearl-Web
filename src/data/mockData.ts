@@ -1,5 +1,5 @@
-import { Room, Service, Testimonial, ProcessStep } from './types';
-import maharaImg from '@/assets/mahara.png';
+import { Room, Service, Testimonial, ProcessStep, Residence } from './types';
+import maharaImg from '@/assets/mahara exterior.png';
 import mahara2Img from '@/assets/mahara2.png';
 import mahara3Img from '@/assets/mahara3.png';
 import assistedLivingImg from '@/assets/services/assisted living.png';
@@ -8,6 +8,28 @@ import mealsNutritionImg from '@/assets/services/meals and nutrition.png';
 import housekeepingLaundryImg from '@/assets/services/housekeeping and laundry.png';
 import recreationWellnessImg from '@/assets/services/recreation and wellness.png';
 import securityMonitoringImg from '@/assets/services/security and monitoring.png';
+import mawaramandiyaExtImg from '@/assets/mawaramandiya exterior.jpeg';
+
+export const residences: Residence[] = [
+    {
+        id: 'Mahara',
+        name: 'Mahara Residence',
+        description: 'Lush garden views and a serene environment near Kandy Road.',
+        descriptionLong: 'Our Mahara Luxury Care Home featuring Individual Rooms with Ensuite Bathroom, Private Balcony, Beautiful Garden Space, 24/7 medical support, Personalized care, Nutritious Meals.',
+        address: 'Green Wood Terrace, 390 P Old Kottawa Rd, Mahara',
+        phone: '+94776604040',
+        image: maharaImg,
+    },
+    {
+        id: 'Mawaramandiya',
+        name: 'Mawaramandiya Residence',
+        description: 'Tranquil lakeside retreat with premium modern amenities.',
+        descriptionLong: 'Our Mawaramandiya Luxury Care Home featuring Individual Rooms with Ensuite Bathroom, Private Balcony, Beautiful Lake View, 24/7 medical support, Personalized care, Nutritious Meals.',
+        address: 'Mawaramandiya, Sri Lanka',
+        phone: '+94776604040',
+        image: mawaramandiyaExtImg,
+    }
+];
 
 export const rooms: Room[] = [
     {

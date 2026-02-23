@@ -4,18 +4,19 @@ import { Button } from '@/components/ui/Button';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Shield, Heart, Clock, Phone, ArrowRight, Star, Quote, MapPin, ImageIcon, ArrowRightCircle, CheckCircle2, TrendingUp, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { services, rooms, testimonials, processSteps } from '@/data/mockData';
+import { services, rooms, testimonials, processSteps, residences } from '@/data/mockData';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 
-import maharaImg from '@/assets/mahara.png';
+import maharaImg from '@/assets/mahara exterior.png';
 import mahara2Img from '@/assets/mahara2.png';
 import mahara3Img from '@/assets/mahara3.png';
+import mawaramandiyaExtImg from '@/assets/mawaramandiya exterior.jpeg';
 
 const HERO_IMAGES = [
-    { text: "Luxury Residence Exterior", color: "bg-navy-light/10", image: maharaImg },
+    { text: "Mahara Residence Exterior", color: "bg-navy-light/10", image: maharaImg },
+    { text: "Mawaramandiya Residence Exterior", color: "bg-gold/10", image: mawaramandiyaExtImg },
     { text: "Elegant Living Space", color: "bg-gold/10", image: mahara2Img },
-    { text: "Serene Garden View", color: "bg-navy/5", image: mahara3Img },
 ];
 
 // Helper to assign images to services for the visual grid - removed as we now use service.image
@@ -277,19 +278,22 @@ export default function Home() {
                     <div className="grid lg:grid-cols-12 gap-8 items-stretch pt-4">
                         {/* Tabs (Left) */}
                         <div className="lg:col-span-4 flex flex-col gap-4">
-                            {rooms.slice(0, 3).map((room, i) => {
-                                const isSelected = selectedRoom?.id === room.id;
+                            {residences.map((res, i) => {
+                                const isSelected = selectedRoom?.location === res.id;
                                 return (
                                     <button
-                                        key={room.id}
-                                        onClick={() => setSelectedRoomId(room.id)}
+                                        key={res.id}
+                                        onClick={() => {
+                                            const firstRoomInLoc = rooms.find(r => r.location === res.id);
+                                            if (firstRoomInLoc) setSelectedRoomId(firstRoomInLoc.id);
+                                        }}
                                         className={`w-full text-left p-4 rounded-xl flex items-center gap-4 transition-all focus:outline-none ${isSelected ? 'border-2 border-gold bg-pearlWhite/50 shadow-sm' : 'border border-navy-light/10 bg-white hover:border-navy-light/30 shadow-sm'}`}
                                     >
-                                        <img src={room.image} alt={room.name} className="w-16 h-16 rounded-lg object-cover" />
+                                        <img src={res.image} alt={res.name} className="w-16 h-16 rounded-lg object-cover" />
                                         <div className="flex-1">
-                                            <h4 className="font-bold text-navy-dark text-lg">{room.location}</h4>
+                                            <h4 className="font-bold text-navy-dark text-lg">{res.id}</h4>
                                             <p className="text-xs text-navy-dark/60 mt-1 uppercase tracking-wider font-semibold">
-                                                {room.availability === 'Available' ? 'Admission Open' : 'Waitlist'}
+                                                {res.id === 'Mahara' ? 'Admission Open' : 'Waitlist'}
                                             </p>
                                         </div>
                                     </button>
@@ -309,7 +313,7 @@ export default function Home() {
                                     className="bg-white border border-navy-light/10 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-8 w-full"
                                 >
                                     <div className="w-full md:w-[45%] h-64 md:h-auto min-h-[250px] rounded-xl overflow-hidden relative shadow-sm">
-                                        <img src={selectedRoom.image} alt={selectedRoom.location} className="w-full h-full object-cover absolute inset-0" />
+                                        <img src={residences.find(r => r.id === selectedRoom.location)?.image || selectedRoom.image} alt={selectedRoom.location} className="w-full h-full object-cover absolute inset-0" />
                                     </div>
                                     <div className="w-full md:w-[55%] flex flex-col pt-2 pb-4">
                                         <div className="flex items-center gap-3 mb-6">
@@ -319,7 +323,7 @@ export default function Home() {
                                             </Badge>
                                         </div>
                                         <p className="text-navy-dark/70 text-sm leading-relaxed mb-6">
-                                            Our {selectedRoom.location} Luxury Care Home featuring Individual Rooms with Ensuite Bathroom, Private Balcony, Beautiful Garden Space, 24/7 medical support, Personalized care, Nutritious Meals
+                                            {residences.find(r => r.id === selectedRoom.location)?.descriptionLong || `Our ${selectedRoom.location} Luxury Care Home.`}
                                         </p>
                                         <div className="flex items-start gap-2 text-sm text-navy-dark/70 mb-8 font-medium">
                                             <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />

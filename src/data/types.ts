@@ -41,3 +41,13 @@ export interface ProcessStep {
     title: string;
     description: string;
 }
+
+export interface Residence {
+    id: Location;
+    name: string;
+    description: string;
+    descriptionLong: string;
+    address: string;
+    phone: string;
+    image: string;
+}
