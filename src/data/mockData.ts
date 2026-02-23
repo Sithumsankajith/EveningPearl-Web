@@ -9,6 +9,10 @@ import housekeepingLaundryImg from '@/assets/services/housekeeping and laundry.p
 import recreationWellnessImg from '@/assets/services/recreation and wellness.png';
 import securityMonitoringImg from '@/assets/services/security and monitoring.png';
 import mawaramandiyaExtImg from '@/assets/mawaramandiya exterior.jpeg';
+import maharaRoom1Img from '@/assets/gallery/mahara/mahara room 1.jpeg';
+import mwRoom1Img from '@/assets/gallery/mawaramandiya/mawaramandiya room 1.jpeg';
+import mwRoom2Img from '@/assets/gallery/mawaramandiya/mawaramandiya room 2.jpeg';
+import mwRoom3Img from '@/assets/gallery/mawaramandiya/mawaramandiya room 3.jpeg';
 
 export const residences: Residence[] = [
     {
@@ -54,31 +58,43 @@ export const rooms: Room[] = [
         amenities: ['24/7 Call Bell', 'Wi-Fi', 'Reading Lamp', 'Personal Storage'],
         included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Basic Medication Management'],
         availability: 'Available',
-        image: mahara2Img,
+        image: maharaRoom1Img,
     },
     {
-        id: 'mw-del-1',
+        id: 'mw-sing-1',
         location: 'Mawaramandiya',
-        name: 'Lakeview Deluxe Room',
-        type: 'Deluxe',
+        name: 'Classic Single Room',
+        type: 'Single',
         price: 'Contact us for pricing',
         features: ['Lake View', 'Spacious Layout', 'Accessible Bathroom'],
         amenities: ['24/7 Call Bell', 'Smart TV', 'Wi-Fi', 'Premium Bedding', 'Sitting Area'],
         included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Nursing Support'],
         availability: 'Waitlist',
-        image: mahara3Img,
+        image: mwRoom3Img,
     },
     {
-        id: 'mw-sui-1',
+        id: 'mw-sing-2',
         location: 'Mawaramandiya',
-        name: 'Presidential Suite',
-        type: 'Suite',
+        name: 'Premium Single Room',
+        type: 'Single',
         price: 'Contact us for pricing',
-        features: ['Separate Living Area', 'Kitchenette', 'Premium Furnishings'],
-        amenities: ['24/7 Call Bell', '2 Smart TVs', 'High-Speed Wi-Fi', 'King Size Bed', 'Lounge Seating'],
-        included: ['Premium Dining', 'Dedicated Caregiver Support', 'Daily Housekeeping', 'Chauffeur Service'],
+        features: ['Lake Front', 'Private Balcony', 'Premium Furnishings'],
+        amenities: ['24/7 Call Bell', 'Smart TV', 'Wi-Fi', 'King Bed', 'Coffee Maker'],
+        included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Nursing Support'],
         availability: 'Available',
-        image: maharaImg,
+        image: mwRoom2Img,
+    },
+    {
+        id: 'mw-shar-1',
+        location: 'Mawaramandiya',
+        name: 'Comfort Shared Room',
+        type: 'Shared',
+        price: 'Contact us for pricing',
+        features: ['Garden Side', 'Privacy Screens', 'Spacious Common Area'],
+        amenities: ['24/7 Call Bell', 'Wi-Fi', 'Personal Storage', 'Reading Lamp'],
+        included: ['All Meals & Snacks', 'Daily Housekeeping', 'Laundry', 'Nursing Support'],
+        availability: 'Waitlist',
+        image: mwRoom1Img,
     }
 ];
 

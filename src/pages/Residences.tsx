@@ -135,7 +135,11 @@ export default function Residences() {
                             >
                                 <Card hoverable className="h-full flex flex-col border-0 ring-1 ring-navy-dark/5 shadow-md overflow-hidden rounded-[2rem]">
                                     <div className="h-60 w-full relative">
-                                        <PlaceholderImage text={room.name} className="w-full h-full object-cover rounded-t-[2rem]" />
+                                        <img
+                                            src={room.image}
+                                            alt={room.name}
+                                            className="w-full h-full object-cover rounded-t-[2rem]"
+                                        />
                                         <div className="absolute top-5 right-5">
                                             <Badge variant={room.availability === 'Available' ? 'success' : 'warning'} className="shadow-md backdrop-blur-md bg-white/95 px-3 py-1">
                                                 {room.availability}
@@ -198,7 +202,11 @@ export default function Residences() {
                     {selectedRoom && (
                         <div className="flex flex-col">
                             <div className="relative h-64 md:h-80 w-auto -mx-6 -mt-6 mb-8 overflow-hidden border-b border-navy-light/20">
-                                <PlaceholderImage text={`${selectedRoom.name} Interior`} className="w-full h-full object-cover" />
+                                <img
+                                    src={selectedRoom.image}
+                                    alt={`${selectedRoom.name} Interior`}
+                                    className="w-full h-full object-cover"
+                                />
                                 <Badge variant={selectedRoom.availability === 'Available' ? 'success' : 'warning'} className="absolute top-4 right-4 text-sm px-4 py-1.5 shadow-md bg-white">
                                     {selectedRoom.availability}
                                 </Badge>
