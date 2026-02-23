@@ -2,6 +2,12 @@ import { Room, Service, Testimonial, ProcessStep } from './types';
 import maharaImg from '@/assets/mahara.png';
 import mahara2Img from '@/assets/mahara2.png';
 import mahara3Img from '@/assets/mahara3.png';
+import assistedLivingImg from '@/assets/services/assisted living.png';
+import nursingMedicationImg from '@/assets/services/nursing and medication.png';
+import mealsNutritionImg from '@/assets/services/meals and nutrition.png';
+import housekeepingLaundryImg from '@/assets/services/housekeeping and laundry.png';
+import recreationWellnessImg from '@/assets/services/recreation and wellness.png';
+import securityMonitoringImg from '@/assets/services/security and monitoring.png';
 
 export const rooms: Room[] = [
     {
@@ -62,7 +68,8 @@ export const services: Service[] = [
         shortDescription: 'Daily support for a comfortable and independent life.',
         description: 'Our trained staff provides dignified assistance with daily activities, ensuring residents remain active and engaged while receiving the help they need.',
         included: ['Bathing & Dressing Assistance', 'Mobility Support', 'Personal Hygiene Care'],
-        iconName: 'HeartHandshake'
+        iconName: 'HeartHandshake',
+        image: assistedLivingImg
     },
     {
         id: 'srv-2',
@@ -71,7 +78,8 @@ export const services: Service[] = [
         shortDescription: 'Professional health monitoring and medication management.',
         description: 'Registered nurses on staff provide diligent oversight of health conditions and coordinate with physicians to ensure optimal wellness.',
         included: ['Medication Administration', 'Vitals Monitoring', 'Physician Coordination', 'Emergency Response'],
-        iconName: 'Stethoscope'
+        iconName: 'Stethoscope',
+        image: nursingMedicationImg
     },
     {
         id: 'srv-3',
@@ -80,7 +88,8 @@ export const services: Service[] = [
         shortDescription: 'Chef-prepared meals tailored to dietary needs.',
         description: 'We offer a high-end dining experience featuring fresh, locally sourced ingredients prepared by executive chefs to meet specific nutritional requirements.',
         included: ['3 Daily Meals', 'Nutritious Snacks', 'Dietitian Consultations', 'Custom Menu Options'],
-        iconName: 'Utensils'
+        iconName: 'Utensils',
+        image: mealsNutritionImg
     },
     {
         id: 'srv-4',
@@ -89,7 +98,8 @@ export const services: Service[] = [
         shortDescription: 'A clean, fresh, and pristine living environment.',
         description: 'Our dedicated housekeeping team maintains the highest standards of cleanliness, allowing residents to enjoy a maintenance-free lifestyle.',
         included: ['Daily Room Cleaning', 'Personal Laundry Service', 'Linen Changes', 'Deep Cleaning'],
-        iconName: 'Sparkles'
+        iconName: 'Sparkles',
+        image: housekeepingLaundryImg
     },
     {
         id: 'srv-5',
@@ -98,7 +108,8 @@ export const services: Service[] = [
         shortDescription: 'Engaging activities for mental and physical health.',
         description: 'A vibrant calendar of social, educational, and physical activities designed to promote holistic wellness and community connection.',
         included: ['Gentle Yoga & Therapy', 'Arts & Crafts', 'Music Evenings', 'Group Excursions'],
-        iconName: 'Flower2'
+        iconName: 'Flower2',
+        image: recreationWellnessImg
     },
     {
         id: 'srv-6',
@@ -107,7 +118,8 @@ export const services: Service[] = [
         shortDescription: '24/7 security and advanced safety protocols.',
         description: 'State-of-the-art security systems and around-the-clock staff presence ensure a completely safe and secure environment for all residents.',
         included: ['CCTV Surveillance', 'Secure Perimeters', 'Visitor Management', 'Fire Safety Systems'],
-        iconName: 'ShieldCheck'
+        iconName: 'ShieldCheck',
+        image: securityMonitoringImg
     }
 ];
 

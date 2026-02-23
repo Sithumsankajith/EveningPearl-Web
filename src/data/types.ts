@@ -23,6 +23,7 @@ export interface Service {
     description: string;
     included: string[];
     iconName: string;
+    image?: string;
 }
 
 export interface Testimonial {

@@ -30,7 +30,16 @@ export default function Services() {
                     {services.map((service) => {
                         const IconComponent = (Icons as any)[service.iconName] || Icons.CheckCircle;
                         return (
-                            <Card key={service.id} className="flex flex-col h-full rounded-[2rem] border-0 shadow-md ring-1 ring-navy-dark/5 bg-white" hoverable>
+                            <Card key={service.id} className="flex flex-col h-full rounded-[2rem] border-0 shadow-md ring-1 ring-navy-dark/5 bg-white overflow-hidden" hoverable>
+                                {service.image && (
+                                    <div className="h-48 w-full overflow-hidden">
+                                        <img
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                        />
+                                    </div>
+                                )}
                                 <CardHeader className="bg-gradient-to-br from-navy-50/50 to-white border-b border-navy-50 pb-5 pt-8 px-8">
                                     <div className="flex items-center gap-5">
                                         <div className="w-14 h-14 rounded-2xl bg-navy-dark text-gold-light flex items-center justify-center shrink-0 shadow-sm">

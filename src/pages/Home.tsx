@@ -18,8 +18,7 @@ const HERO_IMAGES = [
     { text: "Serene Garden View", color: "bg-navy/5", image: mahara3Img },
 ];
 
-// Helper to assign images to services for the visual grid
-const SERVICE_IMAGES = [mahara2Img, maharaImg, mahara3Img, maharaImg, mahara2Img, mahara3Img];
+// Helper to assign images to services for the visual grid - removed as we now use service.image
 
 const renderStyledText = (text: string) => {
     if (!text.includes('&')) return text;
@@ -185,7 +184,7 @@ export default function Home() {
                         {services.map((service, i) => (
                             <Link to="/services" key={i} className="group relative h-[250px] md:h-[280px] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500 block">
                                 <img
-                                    src={SERVICE_IMAGES[i % SERVICE_IMAGES.length]}
+                                    src={service.image}
                                     alt={service.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
