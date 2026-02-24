@@ -114,7 +114,7 @@ export default function Residences() {
                                     ? 'Located near Kandy Road, offering lush garden views and a serene environment with easy access to premier medical facilities.'
                                     : 'Situated overlooking the beautiful waters of Mawaramandiya, offering a tranquil lakeside retreat with premium modern amenities.'}
                             </p>
-                            <Button variant="outline" className="border-navy text-white hover:bg-white hover:text-navy-dark px-6 h-12" onClick={() => window.location.href = '/contact'}>
+                            <Button variant="outline" className="border-gold text-white hover:bg-white hover:text-navy-dark px-6 h-12" onClick={() => window.location.href = '/contact'}>
                                 Book a Tour at {activeLocation}
                             </Button>
                         </div>
