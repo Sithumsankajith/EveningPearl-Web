@@ -109,7 +109,7 @@ export default function Residences() {
                                 <span className="font-semibold tracking-widest uppercase text-xs">Location Details</span>
                             </div>
                             <h3 className="text-3xl lg:text-4xl font-serif font-bold mb-5 leading-tight">{activeLocation} Residence</h3>
-                            <p className="text-navy-light/50 leading-relaxed max-w-xl text-lg mb-8">
+                            <p className="text-white/80 leading-relaxed max-w-xl text-lg mb-8">
                                 {activeLocation === 'Mahara'
                                     ? 'Located near Kandy Road, offering lush garden views and a serene environment with easy access to premier medical facilities.'
                                     : 'Situated overlooking the beautiful waters of Mawaramandiya, offering a tranquil lakeside retreat with premium modern amenities.'}
