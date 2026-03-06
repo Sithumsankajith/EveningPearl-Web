@@ -96,10 +96,3 @@
     transition-duration: 0.01ms !important;
   }
 }
-
-.amp {
-  font-family: 'Playfair Display', serif !important;
-  font-style: italic;
-  font-weight: 400;
-  padding: 0 0.1em;
-}

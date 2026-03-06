@@ -20,8 +20,8 @@ export const residences: Residence[] = [
         name: 'Mahara Residence',
         description: 'Lush garden views and a serene environment near Kandy Road.',
         descriptionLong: 'Our Mahara Luxury Care Home featuring Individual Rooms with Ensuite Bathroom, Private Balcony, Beautiful Garden Space, 24/7 medical support, Personalized care, Nutritious Meals.',
-        address: 'Green Wood Terrace, 390 P Old Kottawa Rd, Mahara',
-        phone: '+94776604040',
+        address: 'No.142, Eksath Mawatha, Mahara, Kadawatha',
+        phone: '+94771101022',
         image: maharaImg,
     },
     {
@@ -29,8 +29,8 @@ export const residences: Residence[] = [
         name: 'Mawaramandiya Residence',
         description: 'Tranquil lakeside retreat with premium modern amenities.',
         descriptionLong: 'Our Mawaramandiya Luxury Care Home featuring Individual Rooms with Ensuite Bathroom, Private Balcony, Beautiful Lake View, 24/7 medical support, Personalized care, Nutritious Meals.',
-        address: 'Mawaramandiya, Sri Lanka',
-        phone: '+94776604040',
+        address: 'No.424, Mawaramandiya, Kadawatha',
+        phone: '+94771101026',
         image: mawaramandiyaExtImg,
     }
 ];

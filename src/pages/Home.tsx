@@ -21,17 +21,6 @@ const HERO_IMAGES = [
 
 // Helper to assign images to services for the visual grid - removed as we now use service.image
 
-const renderStyledText = (text: string) => {
-    if (!text.includes('&')) return text;
-    const parts = text.split('&');
-    return (
-        <>
-            {parts[0]}
-            <span className="amp">&</span>
-            {parts[1]}
-        </>
-    );
-};
 
 export default function Home() {
     const [currentImage, setCurrentImage] = useState(0);
@@ -225,7 +214,7 @@ export default function Home() {
                                     <div className="w-20 h-20 rounded-full bg-gold text-navy-dark flex items-center justify-center text-3xl font-bold mb-8 shadow-lg shadow-navy/10 mx-auto">
                                         {step.number}
                                     </div>
-                                    <h3 className="text-2xl font-serif font-bold text-navy-dark mb-4">{renderStyledText(step.title)}</h3>
+                                    <h3 className="text-2xl font-serif font-bold text-navy-dark mb-4">{step.title}</h3>
                                     <p className="text-navy-dark/70 leading-relaxed px-4">{step.description}</p>
                                     {index === 1 && (
                                         <div className="mt-8">
@@ -327,12 +316,12 @@ export default function Home() {
                                         </p>
                                         <div className="flex items-start gap-2 text-sm text-navy-dark/70 mb-8 font-medium">
                                             <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                                            <span>Green Wood Terrace, 390 P Old Kottawa Rd, {selectedRoom.location}</span>
+                                            <span>{selectedRoom.location === 'Mahara' ? 'No.142, Eksath Mawatha, Mahara, Kadawatha' : 'No.424, Mawaramandiya, Kadawatha'}</span>
                                         </div>
                                         <div className="flex items-center gap-4 mt-auto pt-4 border-t border-navy-light/10">
-                                            <a href="tel:+94776604040">
+                                            <a href={`tel:${selectedRoom.location === 'Mahara' ? '+94771101022' : '+94771101026'}`}>
                                                 <Button variant="outline" className="border-gold text-navy-dark hover:bg-gold hover:border-gold rounded-md gap-2 font-semibold">
-                                                    <Phone size={14} /> +94776604040
+                                                    <Phone size={14} /> {selectedRoom.location === 'Mahara' ? '+94771101022' : '+94771101026'}
                                                 </Button>
                                             </a>
                                             <Link to="/gallery" className="text-gold font-bold text-sm hover:text-navy-dark transition-colors flex items-center gap-1.5 ml-2">

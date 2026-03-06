@@ -18,7 +18,7 @@ export function Footer() {
                             At Evening Pearl, we provide compassionate, personalized senior care in a warm and welcoming environment. Our dedicated team ensures comfort, safety, and dignity, treating every resident like family.
                         </p>
                         <div className="flex items-center gap-4">
-                            <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors">
+                            <a href="https://www.facebook.com/profile.php?id=100076217513058&mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors">
                                 <Facebook size={16} />
                             </a>
                             <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors">
@@ -66,8 +66,8 @@ export function Footer() {
                                     <span className="font-bold text-white">Call / WhatsApp</span>
                                 </div>
                                 <div className="pl-6 flex flex-col gap-1">
-                                    <a href="tel:+94112345678" className="hover:text-gold">+94 11 234 5678 (Mahara)</a>
-                                    <a href="tel:+94112345679" className="hover:text-gold">+94 11 234 5679 (Mawaramandiya)</a>
+                                    <a href="tel:+94771101022" className="hover:text-gold">+94 77 110 1022 (Mahara)</a>
+                                    <a href="tel:+94771101026" className="hover:text-gold">+94 77 110 1026 (Mawaramandiya)</a>
                                 </div>
                             </li>
                             <li>
@@ -76,7 +76,7 @@ export function Footer() {
                                     <span className="font-bold text-white">Email</span>
                                 </div>
                                 <div className="pl-6">
-                                    <a href="mailto:hello@eveningpearl.lk" className="hover:text-gold">hello@eveningpearl.lk</a>
+                                    <a href="mailto:info@everningpearl.lk" className="hover:text-gold">info@everningpearl.lk</a>
                                 </div>
                             </li>
                             <li>
@@ -85,7 +85,7 @@ export function Footer() {
                                     <span className="font-bold text-white">Office Location</span>
                                 </div>
                                 <div className="pl-6 leading-relaxed">
-                                    123 Kandy Road, Mahara,<br />Sri Lanka.
+                                    No.424, Mawaramandiya, <br />Kadawatha, Sri Lanka.
                                 </div>
                             </li>
                         </ul>

@@ -197,8 +197,8 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-navy-dark mb-1">Mahara Residence</h4>
-                                    <p className="text-navy-dark/80 mb-3 font-medium">123 Kandy Road, Mahara<br />Sri Lanka</p>
-                                    <a href="tel:+94112345678" className="text-navy font-bold hover:text-gold-soft transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-light/50 text-sm">Call: +94 11 234 5678</a>
+                                    <p className="text-navy-dark/80 mb-3 font-medium">No.142, Eksath Mawatha, Mahara<br />Kadawatha, Sri Lanka</p>
+                                    <a href="tel:+94771101022" className="text-navy font-bold hover:text-gold-soft transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-light/50 text-sm">Call: +94 77 110 1022</a>
                                 </div>
                             </div>
 
@@ -208,8 +208,8 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-navy-dark mb-1">Mawaramandiya Residence</h4>
-                                    <p className="text-navy-dark/80 mb-3 font-medium">45 Lake Road, Mawaramandiya<br />Sri Lanka</p>
-                                    <a href="tel:+94112345679" className="text-navy font-bold hover:text-gold-soft transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-light/50 text-sm">Call: +94 11 234 5679</a>
+                                    <p className="text-navy-dark/80 mb-3 font-medium">No.424, Mawaramandiya<br />Kadawatha, Sri Lanka</p>
+                                    <a href="tel:+94771101026" className="text-navy font-bold hover:text-gold-soft transition-colors inline-block bg-white px-3 py-1 rounded-md border border-navy-light/50 text-sm">Call: +94 77 110 1026</a>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +224,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-xs font-bold text-navy-dark/70 uppercase tracking-wider mb-1">Email Us</p>
-                                    <a href="mailto:support@eveningpearl.lk" className="text-lg font-medium text-navy-dark hover:text-gold-soft transition-colors">support@eveningpearl.lk</a>
+                                    <a href="mailto:info@everningpearl.lk" className="text-lg font-medium text-navy-dark hover:text-gold-soft transition-colors">info@everningpearl.lk</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 group">

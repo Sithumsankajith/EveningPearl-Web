@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { PlaceholderImage } from '@/components/ui/PlaceholderImage';
+import teamImg from '@/assets/about-team.png';
 
 export default function About() {
     return (
@@ -17,7 +17,7 @@ export default function About() {
                     </p>
                 </div>
                 <div className="h-80 md:h-[450px] rounded-2xl overflow-hidden shadow-lg border border-navy-light/20 p-2 bg-white">
-                    <PlaceholderImage text="Care Team Smiling" className="rounded-xl w-full h-full object-cover" />
+                    <img src={teamImg} alt="Evening Pearl Care Team" className="rounded-xl w-full h-full object-cover" />
                 </div>
             </div>
 

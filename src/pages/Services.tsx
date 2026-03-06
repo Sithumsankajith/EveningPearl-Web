@@ -4,24 +4,13 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import * as Icons from 'lucide-react';
 
-const renderStyledText = (text: string) => {
-    if (!text.includes('&')) return text;
-    const parts = text.split('&');
-    return (
-        <>
-            {parts[0]}
-            <span className="amp">&</span>
-            {parts[1]}
-        </>
-    );
-};
 
 export default function Services() {
     return (
         <div className="bg-pearlWhite min-h-screen pb-20">
             <div className="container mx-auto px-4 md:px-6 pt-12 md:pt-20 lg:max-w-7xl">
                 <SectionHeader
-                    title={renderStyledText("Exceptional Services & Amenities")}
+                    title="Exceptional Services & Amenities"
                     subtitle="Designed for comfort, health, and happiness. We provide a holistic approach to senior living."
                     centered
                 />
@@ -47,7 +36,7 @@ export default function Services() {
                                         </div>
                                         <div>
                                             <p className="text-[11px] font-bold text-gold-soft uppercase tracking-widest mb-1.5">{service.category}</p>
-                                            <h3 className="text-xl font-serif font-bold text-navy-dark leading-tight">{renderStyledText(service.title)}</h3>
+                                            <h3 className="text-xl font-serif font-bold text-navy-dark leading-tight">{service.title}</h3>
                                         </div>
                                     </div>
                                 </CardHeader>
@@ -61,7 +50,7 @@ export default function Services() {
                                             {service.included.map((item, i) => (
                                                 <li key={i} className="flex items-start gap-3 text-sm text-navy-dark/90">
                                                     <Icons.Check className="w-4 h-4 text-gold shrink-0 mt-0.5 font-bold" />
-                                                    <span className="font-medium text-navy-dark/90">{renderStyledText(item)}</span>
+                                                    <span className="font-medium text-navy-dark/90">{item}</span>
                                                 </li>
                                             ))}
                                         </ul>
