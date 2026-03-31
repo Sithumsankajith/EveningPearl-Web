@@ -10,8 +10,8 @@ export default function Services() {
         <div className="bg-pearlWhite min-h-screen pb-20">
             <div className="container mx-auto px-4 md:px-6 pt-12 md:pt-20 lg:max-w-7xl">
                 <SectionHeader
-                    title="Exceptional Services & Amenities"
-                    subtitle="Designed for comfort, health, and happiness. We provide a holistic approach to senior living."
+                    title="Premium Care Services for Seniors in Sri Lanka"
+                    subtitle="Expert elderly care, dementia support, and post-surgical recovery designed for comfort, health, and happiness at Evening Pearl Kadawatha."
                     centered
                 />
 

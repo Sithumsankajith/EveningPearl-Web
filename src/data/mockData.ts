@@ -101,20 +101,20 @@ export const rooms: Room[] = [
 export const services: Service[] = [
     {
         id: 'srv-1',
-        title: 'Assisted Living',
+        title: 'Premium Elderly Care',
         category: 'Care',
-        shortDescription: 'Daily support for a comfortable and independent life.',
-        description: 'Our trained staff provides dignified assistance with daily activities, ensuring residents remain active and engaged while receiving the help they need.',
+        shortDescription: 'Assisted living in Kadawatha for a comfortable and independent life.',
+        description: 'Enjoy an enriching lifestyle with 24/7 personalized assistance. Our dedicated nursing staff ensures that daily living is safe, comfortable, and tailored to individual health needs, allowing residents to thrive in a vibrant, supportive community.',
         included: ['Bathing & Dressing Assistance', 'Mobility Support', 'Personal Hygiene Care'],
         iconName: 'HeartHandshake',
         image: assistedLivingImg
     },
     {
         id: 'srv-2',
-        title: 'Nursing & Medication',
+        title: 'Nursing & Post-Surgical Recovery',
         category: 'Medical',
-        shortDescription: 'Professional health monitoring and medication management.',
-        description: 'Registered nurses on staff provide diligent oversight of health conditions and coordinate with physicians to ensure optimal wellness.',
+        shortDescription: 'Professional health monitoring and short-term post-surgery rehab.',
+        description: 'Transition smoothly from hospital to home with our holistic post-surgical care. Registered nurses provide diligent oversight of health conditions, pain management, and coordinate with physicians for an optimal, tailored recovery.',
         included: ['Medication Administration', 'Vitals Monitoring', 'Physician Coordination', 'Emergency Response'],
         iconName: 'Stethoscope',
         image: nursingMedicationImg
@@ -123,8 +123,8 @@ export const services: Service[] = [
         id: 'srv-3',
         title: 'Meals & Nutrition',
         category: 'Dining',
-        shortDescription: 'Chef-prepared meals tailored to dietary needs.',
-        description: 'We offer a high-end dining experience featuring fresh, locally sourced ingredients prepared by executive chefs to meet specific nutritional requirements.',
+        shortDescription: 'Nutritious Sri Lankan and international chef-prepared meals tailored to seniors.',
+        description: 'We offer a high-end dining experience featuring fresh, locally sourced ingredients prepared by executive chefs to meet specific nutritional requirements of the elderly, ensuring delicious and healthy meals.',
         included: ['3 Daily Meals', 'Nutritious Snacks', 'Dietitian Consultations', 'Custom Menu Options'],
         iconName: 'Utensils',
         image: mealsNutritionImg
@@ -133,8 +133,8 @@ export const services: Service[] = [
         id: 'srv-4',
         title: 'Housekeeping & Laundry',
         category: 'Lifestyle',
-        shortDescription: 'A clean, fresh, and pristine living environment.',
-        description: 'Our dedicated housekeeping team maintains the highest standards of cleanliness, allowing residents to enjoy a maintenance-free lifestyle.',
+        shortDescription: 'A clean, luxury, and pristine living environment.',
+        description: 'Our dedicated housekeeping team maintains the highest standards of cleanliness, allowing residents to enjoy a maintenance-free luxury lifestyle at Evening Pearl.',
         included: ['Daily Room Cleaning', 'Personal Laundry Service', 'Linen Changes', 'Deep Cleaning'],
         iconName: 'Sparkles',
         image: housekeepingLaundryImg
